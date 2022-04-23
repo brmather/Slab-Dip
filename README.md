@@ -1,11 +1,10 @@
 # Predict slab dip
 
-Predict the average slab dip of subducting oceanic lithosphere using the following relation,
+Predict the average slab dip of subducting oceanic lithosphere using simple plate kinematic parameters.
 
-![equation](https://user-images.githubusercontent.com/15915881/138374318-32650216-f131-44c3-b9db-229f28208d97.png)
+#### Cite
 
-where _h_ is the thickness of the subducting plate calculated by plate models of lithospheric cooling (from [Grose, 2012](https://doi.org/10.1016/j.epsl.2012.03.037)), _vc_ is the convergence velocity, _vt_ is the rate of trench migration, and _A_ and _B_ are coefficients obtained from a weighted linear regression.
-Using the present-day configuration of subduction boundaries and slab dips obtained from the Slab2 model ([Hayes _et al._, 2018](https://doi.org/10.1126/science.aat4723)), we obtain _A_ = 0.006 and _B_ = 8 with standard deviations of _σA_ = 0.001 and _σB_ = 5.
+> Mather _et al_. (2022) "Kimberlite eruptions driven by slab flux and subduction angle". _Geophysical Research Letters_. (in review)
 
 
 ## Dependencies
