@@ -1,0 +1,32 @@
+Slab2, version 03/01/2018
+#####
+PI: Gavin P Hayes, U.S. Geological Survey National Earthquake Information Center
+Contact: ghayes@usgs.gov
+#####
+This distribution includes models of three-dimensional slab geometry under the banner of the U.S. Geological Survey Slab2 project.
+#####
+Please refer to the paper: "Slab2 - A Comprehensive Subduction Zone Geometry Model", by Hayes, G.P., et al., submitted to Science, March 2018.
+ScienceBase Data Repository: doi:10.5066/XXXXXXXX
+#####
+Description of Files:
+1) *slab2_dep*.grd = NetCDF formatted grid file of slab depth
+2) *slab2_str*.grd = NetCDF formatted grid file of slab strike
+3) *slab2_dip*.grd = NetCDF formatted grid file of slab dip
+4) *slab2_thk*.grd = NetCDF formatted grid file of slab thickness
+5) *slab2_unc*.grd = NetCDF formatted grid file of slab depth uncertainty
+
+All grid files can be plotted with with GMT grdimage (http://gmt.soest.hawaii.edu/)
+For information on the grid, use:
+
+>gmt grdinfo sum_slab1.0_clip.grd
+
+All supplied models are sampled evert 0.05 degrees in both the X (longitude) and Y (latitude) directions.
+#####
+Slab2Clips:
+All csv files in the Slab2Clips folder describe comma-delimited files of the clipping mask (polygon) for each slab model. Outside of the polygon described by the clipping mask, slab models should not be used. Slab node values outside of the clipping mask are equal to NaN.
+#####
+Slab2Supp:
+Four slab models (Izu-Bonin - izu; Kermadec - ker; Manila - man; and Solomon Islands - sol) include areas where the slab overturns (dip>90º) with depth. In such instances, the slab cannot be descibed by a continuous surface, and is instead provided as a series of descrete (lon,lat,depth,strike,dip,dz1,dz2,dz3,thickness) nodes, where dz1-3 describe various measures of uncertainty (dz1 corresponds to the PDF standard deviation uncertainty used for unc grids, above; dz2 = interpolated shift magnitude uncertainty; dz3 = smoothing-related uncertainty).
+#####
+Slab2_CONTOURS:
+Contours for depth, strike, and dip, generated from the grid files described above. 
