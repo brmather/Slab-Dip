@@ -12,6 +12,7 @@ Predict the average slab dip of subducting oceanic lithosphere using simple plat
 To run this notebook some dependencies are required:
 
 - [pygplates](https://www.gplates.org/download/)
+- [gplately](https://github.com/GPlates/gplately)
 - [PlateTectonicTools](https://github.com/EarthByte/PlateTectonicTools/tree/master/ptt)
 - [cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html) (for mapping)
 - [netCDF4](https://pypi.org/project/netCDF4/) (to extract age grids of the seafloor)
@@ -19,7 +20,7 @@ To run this notebook some dependencies are required:
 
 ## Data packages
 
-A plate reconstruction and corresponding age grids of the seafloor are required to predict slab dip. These may be downloaded from https://www.earthbyte.org/gplates-2-3-software-and-data-sets/
+Plate reconstruction and corresponding age grids of the seafloor are required to predict slab dip. These may be downloaded from https://www.earthbyte.org/gplates-2-3-software-and-data-sets/
 
 The slab dip calculation has been tested on [Clennett _et al._ (2020)](https://doi.org/10.1029/2020GC009117) and [Müller _et al._ (2019)](https://doi.org/10.1029/2018TC005462) plate reconstructions but should also work fine for other plate reconstructions.
 
