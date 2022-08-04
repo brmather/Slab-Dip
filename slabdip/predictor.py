@@ -1,0 +1,320 @@
+import pandas as pd
+from sklearn.preprocessing import StandardScaler
+from sklearn.neural_network import MLPRegressor
+from scipy.ndimage import gaussian_filter1d
+import numpy as np
+import gplately
+
+DEFAULT_TESSELLATION = np.deg2rad(0.5)
+
+default_DataFrame = pd.read_csv("./data/subduction_data.csv", index_col=0)
+default_DataFrame = default_DataFrame[np.isfinite(default_DataFrame['slab_dip'])]
+default_variables = [
+    'angle',
+    'total_vel',
+    'vel',
+    'trench_vel',
+    'vratio',
+    'slab_age',
+    'slab_thickness',
+    'spreading_rate',
+    'density',
+    'curvature'
+]
+
+class SlabDipper(object):
+    
+    def __init__(self, sklearn_regressor=None, X=None, y=None):
+        
+        self.scaler = StandardScaler()
+
+        # set up regressor
+        if sklearn_regressor is None:
+            sklearn_regressor = MLPRegressor(solver='lbfgs', max_iter=2000, tol=0.05)
+
+        self.kernel = sklearn_regressor
+
+        # get training data from package directory
+        if X is None:
+            X = default_DataFrame[default_variables]
+        if y is None:
+            y = default_DataFrame['slab_dip']
+
+        # scale the training data and train the neural network
+        self.add_training_data(X, y)
+
+        # initialise placeholder for gplately plate reconstruction model
+        self._model = None
+        self.downloader = None
+        self.agegrid_filename = None
+        self.spreadrate_filename = None
+        
+    def add_training_data(self, X, y):
+        assert X.shape[0] == y.size, "X must have the same number of rows as y"
+
+        self.scaler.fit(X)
+        X_scaled = self.scaler.transform(X)
+        self.X = X
+        self.X_scaled = X_scaled
+        self.y = y
+
+        self.kernel.fit(X_scaled, y)
+
+        self.predictive_variables = X.columns
+
+    def get_score(self):
+        return self.kernel.score(self.X_scaled, self.y)
+    
+    def predict(self, X):
+        X_scaled = self.scaler.transform(X)
+        y_predict = self.kernel.predict(X_scaled)
+        return y_predict
+
+    def add_plate_reconstruction(self, model):
+        self._model = model
+
+        if model.name:
+            # initialise DataServer object
+            self.downloader = gplately.DataServer(str(model.name))
+
+    def set_age_grid_filename(self, filename):
+        self.agegrid_filename = str(filename)
+
+    def set_spreading_rate_grid_filename(self, filename):
+        self.spreadrate_filename = str(filename)
+
+    @property
+    def model(self):
+        return self._model
+    
+    @model.setter
+    def model(self, value):
+        self.add_plate_reconstruction(value)
+
+    def smooth_1D(self, array, sigma):
+        if sigma > 0:
+            return gaussian_filter1d(array, sigma)
+        else:
+            return array
+        
+    def sample_age_grid(self, lons, lats, time):
+        # age_grid = self.downloader.get_age_grid(reconstruction_time)
+        if self.agegrid_filename:
+            age_raster = gplately.Raster(filename=self.agegrid_filename.format(time))
+        elif self.downloader:
+            grid = self.downloader.get_age_grid(time)
+            age_raster = gplately.Raster(array=grid, extent=[-180,180,-90,90])
+        else:
+            raise ValueError("Cannot download age grid. \
+                Set agegrid_filename or provide a supported reconstruction model")
+
+        age_raster.fill_NaNs(overwrite=True) # fill in NaN values
+        age_interp = age_raster.interpolate(lons, lats) # interpolate to trenches
+        return age_interp
+    
+    def sample_spreading_rate_grid(self, lons, lats, time):
+        # spreadrate_grid = self.downloader.get_spreading_rate_grid(reconstruction_time)
+        if self.spreadrate_filename:
+            spreadrate_raster = gplately.Raster(filename=self.spreadrate_filename.format(time))
+        elif self.downloader:
+            grid = self.downloader.get_spreading_rate_grid(time)
+            spreadrate_raster = gplately.Raster(array=grid, extent=[-180,180,-90,90])
+        else:
+            raise ValueError("Cannot download spreading rate grid. \
+                Set spreadrate_filename or provide a supported reconstruction model")
+
+        spreadrate_raster.fill_NaNs(overwrite=True)
+        spreadrate_interp = spreadrate_raster.interpolate(lons, lats)
+        return spreadrate_interp*1e-3
+    
+    def calculate_plate_density(self, plate_thickness, return_relative_density=False):
+        h_slab = plate_thickness
+        h_c = 7e3 # thickness of crust
+        h_s = 43e3 # thickness of spinel field
+        h_g = 55e3 # thickness of garnet field
+        h_total = h_c + h_s + h_g
+
+        rho_a = 3300
+        rho_c = 2900 # density of crust
+        rho_s = 3330 # density of spinel
+        rho_g0, rho_g1 = 3370, 3340 # density of garnet (upper, lower)
+
+        h_c = np.minimum(h_slab, h_c)
+        h_s = np.minimum(h_slab - h_c, h_s)
+        h_g = h_slab - h_c - h_s
+
+        # find the density of the garnet field
+        # a linear decay from g0 to g1 from 0 to 55+ km thickness
+        def rho_garnet(h):
+            m = -(3370 - 3340)/55e3
+            c = 3370
+            return h*m + c
+
+        rho_g = 0.5*(rho_g0 + rho_garnet(h_g))
+
+        rho_plate = (rho_c*h_c + rho_s*h_s + rho_g*h_g)/(h_c + h_s + h_g + 1e-6)
+        rho_plate[np.isclose(h_c + h_s + h_g, 0)] = rho_c
+        delta_rho = rho_plate - rho_a
+        
+        if return_relative_density:
+            return rho_plate, delta_rho
+        else:
+            return rho_plate
+
+        
+    def segmentise_trench_boundaries(self, subduction_lon, subduction_lat):
+
+        earth_radius = gplately.EARTH_RADIUS
+
+        dtol = self.tessellation_threshold_radians*earth_radius + 5.0 # km
+        segment_IDs = np.zeros(len(subduction_lon), dtype=int)
+
+        index = 1
+        for i in range(0, len(subduction_lon)-1):
+            lon0 = subduction_lon[i]
+            lat0 = subduction_lat[i]
+            lon1 = subduction_lon[i+1]
+            lat1 = subduction_lat[i+1]
+
+            # distance between points (convert to unit sphere)
+
+            xs, ys, zs = gplately.tools.lonlat2xyz([lon0,lon1], [lat0,lat1])
+            dist = np.sqrt((xs[1]-xs[0])**2 + (ys[1]-ys[0])**2 + (zs[1]-zs[0])**2) * earth_radius
+
+            if dist < dtol:
+                # add to current segment
+                segment_IDs[i] = index
+
+            elif np.count_nonzero(segment_IDs == index) > 1:
+                segment_IDs[i] = index
+                index += 1
+            else:
+                pass
+
+        unique_segment_IDs = set(segment_IDs)
+        unique_segment_IDs.remove(0)
+        return segment_IDs, unique_segment_IDs
+    
+    def calculate_trench_curvature(self, lons, lats, norm, length, smoothing=5, return_segment_IDs=False):
+        
+        subduction_norm = norm
+        segment_IDs, unique_segment_IDs = self.segmentise_trench_boundaries(lons, lats)
+    
+        segment_angle = np.zeros(len(lons))
+        subduction_radius = np.zeros(len(lons))
+
+        for i, seg_ID in enumerate(unique_segment_IDs):
+            mask_segment = segment_IDs == seg_ID
+
+            segment_norm = subduction_norm[mask_segment].copy()
+
+            # calculate angle between subuction zone segments
+            dangle = np.gradient((segment_norm))
+
+            # correct changes in plane
+            dangle[dangle < 180] += 360
+            dangle[dangle > 180] -= 360
+            dangle[dangle < 90]  += 180
+            dangle[dangle > 90]  -= 180
+
+            distance = length[mask_segment]
+            radius = dangle / distance
+
+            # apply some smoothing
+            smooth_radius = self.smooth_1D(radius, smoothing)
+            subduction_radius[mask_segment] = smooth_radius
+            
+        
+        if return_segment_IDs:
+            return subduction_radius, segment_IDs, unique_segment_IDs
+        else:
+            return subduction_radius
+    
+    def tessellate_slab_dip(self, time, tessellation_threshold_radians=DEFAULT_TESSELLATION):
+        time = int(time)
+        self.tessellation_threshold_radians = DEFAULT_TESSELLATION
+        
+        if self._model is None:
+            raise ValueError("Don't forget to set a GPlately plate model! `self.model = model`")
+        
+        subduction_data = self._model.tesselate_subduction_zones(
+                                                           time,
+                                                           tessellation_threshold_radians,
+                                                           ignore_warnings=True,
+                                                           output_subducting_absolute_velocity_components=True)
+
+        # mask "negative" subduction rates
+        subduction_convergence = subduction_data[:,2]*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
+        subduction_data = subduction_data[subduction_convergence >= 0]
+
+        subduction_lon         = subduction_data[:,0]
+        subduction_lat         = subduction_data[:,1]
+        subduction_vel         = subduction_data[:,2]*1e-2
+        subduction_angle       = subduction_data[:,3]
+        subduction_norm        = subduction_data[:,7]
+        subduction_pid_sub     = subduction_data[:,8]
+        subduction_pid_over    = subduction_data[:,9]
+        subduction_length      = np.deg2rad(subduction_data[:,6]) * gplately.EARTH_RADIUS * 1e3 # in metres
+        subduction_convergence = subduction_data[:,2]*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
+        subduction_migration   = subduction_data[:,4]*1e-2 * np.cos(np.deg2rad(subduction_data[:,5]))
+        subduction_plate_vel   = subduction_data[:,10]*1e-2
+
+        # sample AgeGrid
+        age_interp = self.sample_age_grid(subduction_lon, subduction_lat, time)
+        thickness = gplately.tools.plate_isotherm_depth(age_interp)
+
+        # sample spreadrate grid
+        spreadrate_interp = self.sample_spreading_rate_grid(subduction_lon, subduction_lat, time)
+
+        # get the ratio of convergence velocity to trench migration
+        vratio = (subduction_convergence + subduction_migration)/(subduction_convergence + 1e-22)
+        vratio[subduction_plate_vel < 0] *= -1
+        vratio = np.clip(vratio, 0.0, 1.0)
+        
+        subduction_flux = subduction_convergence*thickness
+
+        # calculate density of the down-going plate
+        rho_plate, delta_rho = self.calculate_plate_density(thickness, return_relative_density=True)
+        
+        # calculate trench curvature
+        subduction_radius, segment_IDs, unique_segment_IDs = self.calculate_trench_curvature(
+            subduction_lon, subduction_lat, subduction_norm, subduction_length, return_segment_IDs=True)
+        
+        # stuff all these variables into a DataFrame
+        output_data = np.column_stack([
+            subduction_lon,
+            subduction_lat,
+            subduction_angle,
+            subduction_norm,
+            subduction_pid_sub,
+            subduction_pid_over,
+            subduction_length,
+            subduction_vel,
+            subduction_convergence,
+            subduction_migration,
+            subduction_plate_vel,
+            subduction_flux,
+            age_interp,
+            thickness,
+            vratio,
+            segment_IDs,
+            subduction_radius,
+            rho_plate,
+            delta_rho,
+            spreadrate_interp
+        ])
+
+        header = ['lon', 'lat', 'angle', 'norm', 'pid_sub', 'pid_over', 'length', 
+                  'total_vel', 'vel', 'trench_vel', 'slab_vel_abs',
+                  'slab_flux', 'slab_age', 'slab_thickness', 'vratio',
+                  'segment_ID', 'curvature', 'density', 'relative_density', 'spreading_rate']
+
+        df = pd.DataFrame(output_data, columns=header)
+        df.dropna(inplace=True)
+        df_X = df[self.predictive_variables]
+
+        # calculate slab dip
+        slab_dip = self.predict(df_X)
+        df = df.assign(slab_dip=slab_dip)
+        return df
+        
