@@ -2,12 +2,16 @@ import pandas as pd
 from sklearn.preprocessing import StandardScaler
 from sklearn.neural_network import MLPRegressor
 from scipy.ndimage import gaussian_filter1d
+from scipy.spatial import cKDTree
 import numpy as np
 import gplately
+import pkg_resources
 
 DEFAULT_TESSELLATION = np.deg2rad(0.5)
 
-default_DataFrame = pd.read_csv("./data/subduction_data.csv", index_col=0)
+subduction_data_filename = pkg_resources.resource_filename("slabdip", "data/subduction_data.csv")
+
+default_DataFrame = pd.read_csv(subduction_data_filename, index_col=0)
 default_DataFrame = default_DataFrame[np.isfinite(default_DataFrame['slab_dip'])]
 default_variables = [
     'angle',
@@ -19,8 +23,13 @@ default_variables = [
     'slab_thickness',
     'spreading_rate',
     'density',
-    'curvature'
 ]
+
+def smooth_1D(array, sigma):
+    if sigma > 0:
+        return gaussian_filter1d(array, sigma)
+    else:
+        return array
 
 class SlabDipper(object):
     
@@ -61,6 +70,7 @@ class SlabDipper(object):
         self.kernel.fit(X_scaled, y)
 
         self.predictive_variables = X.columns
+        self.tree = cKDTree(self.X)
 
     def get_score(self):
         return self.kernel.score(self.X_scaled, self.y)
@@ -90,12 +100,6 @@ class SlabDipper(object):
     @model.setter
     def model(self, value):
         self.add_plate_reconstruction(value)
-
-    def smooth_1D(self, array, sigma):
-        if sigma > 0:
-            return gaussian_filter1d(array, sigma)
-        else:
-            return array
         
     def sample_age_grid(self, lons, lats, time):
         # age_grid = self.downloader.get_age_grid(reconstruction_time)
@@ -221,7 +225,7 @@ class SlabDipper(object):
             radius = dangle / distance
 
             # apply some smoothing
-            smooth_radius = self.smooth_1D(radius, smoothing)
+            smooth_radius = smooth_1D(radius, smoothing)
             subduction_radius[mask_segment] = smooth_radius
             
         
@@ -313,8 +317,29 @@ class SlabDipper(object):
         df.dropna(inplace=True)
         df_X = df[self.predictive_variables]
 
-        # calculate slab dip
-        slab_dip = self.predict(df_X)
-        df = df.assign(slab_dip=slab_dip)
+        # calculate slab dip - clip to realistic range
+        slab_dip = np.clip(self.predict(df_X), 0, 90)
+
+        # find the euclidean distance between training data and predicted result
+        prediction_distance, index = self.tree.query(df_X, p=2)
+
+        df = df.assign(slab_dip=slab_dip, prediction_distance=prediction_distance)
         return df
-        
+
+    def smooth_along_segments(self, df, variable_name, smoothing=5):
+
+        # extract segments
+        segment_IDs = df['segment_ID'].to_numpy().astype(int)
+        unique_segment_IDs = np.unique(segment_IDs)
+
+        # extract variable
+        array = df[variable_name]
+        smooth_array = array.copy()
+
+        # smooth array along segment
+        for i, seg_ID in enumerate(unique_segment_IDs):
+            mask_segment = segment_IDs == seg_ID
+            if np.count_nonzero(mask_segment) > 1:
+                smooth_array[mask_segment] = smooth_1D(array[mask_segment], smoothing)
+
+        return smooth_array
