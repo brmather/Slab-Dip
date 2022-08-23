@@ -1,6 +1,6 @@
 import pandas as pd
 from sklearn.preprocessing import StandardScaler
-from sklearn.neural_network import MLPRegressor
+from sklearn.neighbors import KNeighborsRegressor
 from scipy.ndimage import gaussian_filter1d
 from scipy.spatial import cKDTree
 import numpy as np
@@ -31,6 +31,18 @@ def smooth_1D(array, sigma):
     else:
         return array
 
+def weighted_av(values, weights):
+    """
+    Take the weighted average of values 
+    
+    Some error checking to deal with empty arrays
+    """
+    if values.any():
+        if len(values) > 1:
+            return (values*weights).sum()/weights.sum()
+        else:
+            return values
+
 class SlabDipper(object):
     
     def __init__(self, sklearn_regressor=None, X=None, y=None):
@@ -39,7 +51,7 @@ class SlabDipper(object):
 
         # set up regressor
         if sklearn_regressor is None:
-            sklearn_regressor = MLPRegressor(solver='lbfgs', max_iter=2000, tol=0.05)
+            sklearn_regressor = KNeighborsRegressor(n_neighbors=3)
 
         self.kernel = sklearn_regressor
 
@@ -204,29 +216,31 @@ class SlabDipper(object):
         subduction_norm = norm
         segment_IDs, unique_segment_IDs = self.segmentise_trench_boundaries(lons, lats)
     
-        segment_angle = np.zeros(len(lons))
         subduction_radius = np.zeros(len(lons))
 
         for i, seg_ID in enumerate(unique_segment_IDs):
             mask_segment = segment_IDs == seg_ID
 
-            segment_norm = subduction_norm[mask_segment].copy()
+            if np.count_nonzero(mask_segment) > 1:
+                segment_norm = subduction_norm[mask_segment]
 
-            # calculate angle between subuction zone segments
-            dangle = np.gradient((segment_norm))
+                # calculate angle between subuction zone segments
+                dangle = np.gradient((segment_norm))
 
-            # correct changes in plane
-            dangle[dangle < 180] += 360
-            dangle[dangle > 180] -= 360
-            dangle[dangle < 90]  += 180
-            dangle[dangle > 90]  -= 180
+                # correct changes in plane
+                dangle[dangle < 180] += 360
+                dangle[dangle > 180] -= 360
+                dangle[dangle < 90]  += 180
+                dangle[dangle > 90]  -= 180
 
-            distance = length[mask_segment]
-            radius = dangle / distance
+                distance = length[mask_segment]
+                radius = dangle / distance
 
-            # apply some smoothing
-            smooth_radius = smooth_1D(radius, smoothing)
-            subduction_radius[mask_segment] = smooth_radius
+                # apply some smoothing
+                smooth_radius = smooth_1D(radius, smoothing)
+                subduction_radius[mask_segment] = smooth_radius
+            else:
+                subduction_radius[mask_segment] = 0
             
         
         if return_segment_IDs:
@@ -321,9 +335,9 @@ class SlabDipper(object):
         slab_dip = np.clip(self.predict(df_X), 0, 90)
 
         # find the euclidean distance between training data and predicted result
-        prediction_distance, index = self.tree.query(df_X, p=2)
+        distance, index = self.tree.query(df_X, p=2)
 
-        df = df.assign(slab_dip=slab_dip, prediction_distance=prediction_distance)
+        df = df.assign(slab_dip=slab_dip, prediction_distance=distance, nearest_neighbour=index)
         return df
 
     def smooth_along_segments(self, df, variable_name, smoothing=5):
@@ -343,3 +357,21 @@ class SlabDipper(object):
                 smooth_array[mask_segment] = smooth_1D(array[mask_segment], smoothing)
 
         return smooth_array
+
+    def surrogate_slab_dip(self, df):
+
+        # extract segments
+        segment_IDs = df['segment_ID'].to_numpy().astype(int)
+        unique_segment_IDs = np.unique(segment_IDs)
+
+        dip = df['slab_dip'].copy()
+
+        # smooth array along segment
+        for i, seg_ID in enumerate(unique_segment_IDs):
+            mask_segment = segment_IDs == seg_ID
+            if np.count_nonzero(mask_segment) > 1:
+                dip[mask_segment] = weighted_av(df['slab_dip'][mask_segment],
+                                                df['prediction_distance'][mask_segment])
+
+        return dip
+
