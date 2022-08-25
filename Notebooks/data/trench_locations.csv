@@ -1,0 +1,28 @@
+Lon,Lat,Abbreviation,Name,Region,Type
+-170,-15,Ton,Tonga,Oceania,Ocean - Ocean
+-174,-35,Ker,Kermadec,Oceania,Ocean - Ocean
+170,-16,NH,New Hebrides,Oceania,Ocean - Ocean
+160,-9,Sol,Solomon,Oceania,Ocean - Continent
+138,-1,PNG,Papua New Guinea,SE Asia,Ocean - Continent
+112,-14,Java,Java,SE Asia,Ocean - Continent
+85,-4,Sum,Sumatra,SE Asia,Ocean - Continent
+59,30,Mak,Makran,SE Asia,Continent - Continent
+30,30,Hel,Hellenic,Europe,Ocean - Continent
+18,34,Cal,Calabria,Europe,Ocean - Continent
+150,15,Mar,Marianas,SE Asia,Ocean - Ocean
+145,30,IZB,Izu-Bonin,SE Asia,Ocean - Ocean
+130,22,Ryu,Ryukyu,SE Asia,Ocean - Continent
+130,32,SJ,SW Japan,Asia,Ocean - Continent
+107,16,Man,Manila,SE Asia,Ocean - Ocean
+130,14,Ph,Philippine,SE Asia,Ocean - Ocean
+146,37,NJ,NE Japan,Asia,Ocean - Continent
+153,41,Kur,Kurile,Asia,Ocean - Continent
+-175,45,Al,Aleutians,N America,Ocean - Ocean
+-142,43,Cas,Cascades,N America,Ocean - Continent
+-110,12,Mex,Mexico,Central America,Ocean - Continent
+-100,5,MAM,Middle America,Central America,Ocean - Continent
+-55,18,LAT,Lesser Antilles,Central America,Ocean - Ocean
+-89,0,EC,Ecuador,S America,Ocean - Continent
+-83,-20,SA,South America,S America,Ocean - Continent
+-92,-45,SC,South Chile,S America,Ocean - Continent
+-40,-63,SSW,South Sandwich,S America,Ocean - Ocean
