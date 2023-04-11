@@ -9,7 +9,7 @@ with io.open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 if __name__ == "__main__":
     setup(
         name='slabdip',
-        version='4.0',
+        version='4.1',
         description='Setting up a python package',
         long_description=long_description,
         long_description_content_type='text/markdown',
@@ -18,7 +18,8 @@ if __name__ == "__main__":
         url='https://github.com/brmather/Slab-Dip',
         install_requires=[
             'pandas',
-            'numpy'
+            'numpy',
+            'gplately >= 0.4'
         ],
         extras_require={'plotting': ['matplotlib', 'jupyter', 'cartopy']},
         packages=['slabdip'],

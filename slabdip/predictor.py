@@ -116,30 +116,30 @@ class SlabDipper(object):
     def sample_age_grid(self, lons, lats, time):
         # age_grid = self.downloader.get_age_grid(reconstruction_time)
         if self.agegrid_filename:
-            age_raster = gplately.Raster(filename=self.agegrid_filename.format(time))
+            age_raster = gplately.Raster(data=self.agegrid_filename.format(time))
         elif self.downloader:
             grid = self.downloader.get_age_grid(time)
-            age_raster = gplately.Raster(array=grid, extent=[-180,180,-90,90])
+            age_raster = gplately.Raster(data=grid, extent=[-180,180,-90,90])
         else:
             raise ValueError("Cannot download age grid. \
                 Set agegrid_filename or provide a supported reconstruction model")
 
-        age_raster.fill_NaNs(overwrite=True) # fill in NaN values
+        age_raster.fill_NaNs(inplace=True) # fill in NaN values
         age_interp = age_raster.interpolate(lons, lats) # interpolate to trenches
         return age_interp
     
     def sample_spreading_rate_grid(self, lons, lats, time):
         # spreadrate_grid = self.downloader.get_spreading_rate_grid(reconstruction_time)
         if self.spreadrate_filename:
-            spreadrate_raster = gplately.Raster(filename=self.spreadrate_filename.format(time))
+            spreadrate_raster = gplately.Raster(data=self.spreadrate_filename.format(time))
         elif self.downloader:
             grid = self.downloader.get_spreading_rate_grid(time)
-            spreadrate_raster = gplately.Raster(array=grid, extent=[-180,180,-90,90])
+            spreadrate_raster = gplately.Raster(data=grid, extent=[-180,180,-90,90])
         else:
             raise ValueError("Cannot download spreading rate grid. \
                 Set spreadrate_filename or provide a supported reconstruction model")
 
-        spreadrate_raster.fill_NaNs(overwrite=True)
+        spreadrate_raster.fill_NaNs(inplace=True)
         spreadrate_interp = spreadrate_raster.interpolate(lons, lats)
         return spreadrate_interp*1e-3
     
@@ -262,7 +262,7 @@ class SlabDipper(object):
                                                            output_subducting_absolute_velocity_components=True)
 
         # mask "negative" subduction rates
-        subduction_convergence = subduction_data[:,2]*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
+        subduction_convergence = np.fabs(subduction_data[:,2])*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
         subduction_data = subduction_data[subduction_convergence >= 0]
 
         subduction_lon         = subduction_data[:,0]
@@ -273,6 +273,8 @@ class SlabDipper(object):
         subduction_pid_sub     = subduction_data[:,8]
         subduction_pid_over    = subduction_data[:,9]
         subduction_length      = np.deg2rad(subduction_data[:,6]) * gplately.EARTH_RADIUS * 1e3 # in metres
+        subduction_convergence = np.fabs(subduction_data[:,2])*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
+        subduction_migration   = np.fabs(subduction_data[:,4])*1e-2 * np.cos(np.deg2rad(subduction_data[:,5]))
         subduction_convergence = subduction_data[:,2]*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
         subduction_migration   = subduction_data[:,4]*1e-2 * np.cos(np.deg2rad(subduction_data[:,5]))
         subduction_plate_vel   = subduction_data[:,10]*1e-2
