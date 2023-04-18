@@ -9,8 +9,8 @@ with io.open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 if __name__ == "__main__":
     setup(
         name='slabdip',
-        version='4.1.1',
-        description='Setting up a python package',
+        version='4.1.2',
+        description='Method to calculate slab dip using simple plate kinematic parameters',
         long_description=long_description,
         long_description_content_type='text/markdown',
         author='Ben Mather',
