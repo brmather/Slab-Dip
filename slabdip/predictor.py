@@ -255,7 +255,7 @@ class SlabDipper(object):
         if self._model is None:
             raise ValueError("Don't forget to set a GPlately plate model! `self.model = model`")
         
-        subduction_data = self._model.tesselate_subduction_zones(
+        subduction_data = self._model.tessellate_subduction_zones(
                                                            time,
                                                            tessellation_threshold_radians,
                                                            ignore_warnings=True,
