@@ -24,6 +24,29 @@ Some conda instructions for setting up a Python environment are [here](https://w
 
 Most of the Jupyter notebooks can be run without installing this package, however, following these installation instructions will make the slab dip prediction tool available system-wide.
 
+### 1. Using conda (recommended)
+
+You can install the latest stable public release of `slabdip` and all of its dependencies using conda.
+This is the preferred method to install `slabdip` which downloads binaries from the conda-forge channel.
+
+```sh
+conda install -c conda-forge gplately
+```
+
+#### Creating a new conda environment
+
+We recommend creating a new conda environment inside which to install `slabdip`. This avoids any potential conflicts in your base Python environment. In the example below we create a new environment called "`my-env`":
+
+```sh
+conda create -n my-env
+conda activate my-env
+conda install -c conda-forge slabdip
+```
+
+`my-env` needs to be activated whenever you use `GPlately`: i.e. `conda activate my-env`.
+
+### 2. Using pip
+
 From the current directory, run
 
 ```sh
