@@ -14,6 +14,7 @@ To run the Jupyter notebooks some dependencies are required:
 - [pygplates](https://www.gplates.org/download/)
 - [gplately](https://github.com/GPlates/gplately)
 - [PlateTectonicTools](https://github.com/EarthByte/PlateTectonicTools/tree/master/ptt)
+- [Scikit-Learn](https://scikit-learn.org)
 - [cartopy](https://scitools.org.uk/cartopy/docs/latest/installing.html) (for mapping)
 - [netCDF4](https://pypi.org/project/netCDF4/) (to extract age grids of the seafloor)
 

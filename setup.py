@@ -9,7 +9,7 @@ with io.open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 if __name__ == "__main__":
     setup(
         name='slabdip',
-        version='4.1.2',
+        version='4.1.3',
         description='Method to calculate slab dip using simple plate kinematic parameters',
         long_description=long_description,
         long_description_content_type='text/markdown',
@@ -19,7 +19,8 @@ if __name__ == "__main__":
         install_requires=[
             'pandas',
             'numpy',
-            'gplately >= 0.4'
+            'scikit-learn',
+            'gplately >= 1.0'
         ],
         extras_require={'plotting': ['matplotlib', 'jupyter', 'cartopy']},
         packages=['slabdip'],
