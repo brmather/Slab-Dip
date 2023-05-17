@@ -275,8 +275,6 @@ class SlabDipper(object):
         subduction_length      = np.deg2rad(subduction_data[:,6]) * gplately.EARTH_RADIUS * 1e3 # in metres
         subduction_convergence = np.fabs(subduction_data[:,2])*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
         subduction_migration   = np.fabs(subduction_data[:,4])*1e-2 * np.cos(np.deg2rad(subduction_data[:,5]))
-        subduction_convergence = subduction_data[:,2]*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
-        subduction_migration   = subduction_data[:,4]*1e-2 * np.cos(np.deg2rad(subduction_data[:,5]))
         subduction_plate_vel   = subduction_data[:,10]*1e-2
 
         # sample AgeGrid
