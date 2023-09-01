@@ -4,7 +4,21 @@ Predict the dip angle of subducting oceanic lithosphere using simple plate kinem
 
 #### Cite
 
-> Mather _et al_. (2022) "Kimberlite eruptions driven by slab flux and subduction angle". _Scientific Reports_. (in review)
+```bib
+@article{Mather2023,
+  title = {Kimberlite Eruptions Driven by Slab Flux and Subduction Angle},
+  author = {Mather, Ben R and M{\"u}ller, R Dietmar and Alfonso, Christopher P. and Seton, Maria and Wright, Nicky M.},
+  year = {2023},
+  journal = {Scientific Reports},
+  volume = {13},
+  number = {9216},
+  pages = {1--12},
+  doi = {10.1038/s41598-023-36250-w},
+}
+```
+
+> Mather, B. R., Müller, R. D., Alfonso, C. P., Seton, M., & Wright, N. M. (2023). Kimberlite eruptions driven by slab flux and subduction angle. Scientific Reports, 13(9216), 1–12. https://doi.org/10.1038/s41598-023-36250-w
+
 
 
 ## Dependencies
