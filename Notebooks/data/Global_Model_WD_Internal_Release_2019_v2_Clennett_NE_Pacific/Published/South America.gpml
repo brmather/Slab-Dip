@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gpml:FeatureCollection xmlns:gpml="http://www.gplates.org/gplates" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/XMLSchema-instance" gpml:version="1.6.0339" xsi:schemaLocation="http://www.gplates.org/gplates ../xsd/gpml.xsd http://www.opengis.net/gml ../../../gml/current/base">
+    <gml:featureMember>
+        <gpml:TerraneBoundary>
+            <gpml:identity>GPlates-b87526fe-e941-4ba2-9ecc-fe466539c520</gpml:identity>
+            <gpml:revision>GPlates-7b9836be-f8bb-4524-b64a-32c27076b928</gpml:revision>
+            <gml:name>Pinon</gml:name>
+            <gml:validTime>
+                <gml:TimePeriod>
+                    <gml:begin>
+                        <gml:TimeInstant>
+                            <gml:timePosition gml:frame="http://gplates.org/TRS/flat">123</gml:timePosition>
+                        </gml:TimeInstant>
+                    </gml:begin>
+                    <gml:end>
+                        <gml:TimeInstant>
+                            <gml:timePosition gml:frame="http://gplates.org/TRS/flat">0</gml:timePosition>
+                        </gml:TimeInstant>
+                    </gml:end>
+                </gml:TimePeriod>
+            </gml:validTime>
+            <gpml:reconstructionPlateId>
+                <gpml:ConstantValue>
+                    <gpml:value>1094</gpml:value>
+                    <gml:description></gml:description>
+                    <gpml:valueType xmlns:gpml="http://www.gplates.org/gplates">gpml:plateId</gpml:valueType>
+                </gpml:ConstantValue>
+            </gpml:reconstructionPlateId>
+            <gpml:geometryImportTime>
+                <gml:TimeInstant>
+                    <gml:timePosition gml:frame="http://gplates.org/TRS/flat">0</gml:timePosition>
+                </gml:TimeInstant>
+            </gpml:geometryImportTime>
+            <gpml:centerLineOf>
+                <gpml:ConstantValue>
+                    <gpml:value>
+                        <gml:Polygon>
+                            <gml:exterior>
+                                <gml:LinearRing>
+                                    <gml:posList gml:dimension="2">-2.4206744551596842 -79.78769904979228 -2.3071494102477885 -79.844337463378906 -2.5535587924610894 -79.892025753850817 -2.5731935535637831 -79.911094133010465 -2.520046234130831 -79.976394653320284 -2.5182909965513716 -79.938911437988253 -2.4808208942412904 -79.931060791015568 -2.4744675159452925 -79.891967773437358 -2.4076960086821657 -79.92726135253892 -2.5083928108214764 -79.94277954101554 -2.4721839427947145 -79.987495422363196 -2.5054225921630717 -80.034194946289034 -2.3012599945067507 -79.909217834472599 -2.3114969730376487 -79.959053039550753 -2.6000640392302601 -80.175201416015653 -2.5981824398040345 -80.280113220214702 -2.7399351596831565 -80.252799987792969 -2.4169950485228928 -80.663139343261705 -2.3369023799896098 -80.893241882324077 -2.1893320083617738 -81.007003784179545 -2.2054247856139853 -80.87568664550767 -2.0387291908263308 -80.73239135742196 -1.6024532318115661 -80.84957122802723 -1.3555099964141135 -80.736961364746065 -1.0548285245894533 -80.908081054687415 -0.9567730426788047 -80.825180053710909 -0.90865993499748754 -80.565895080566335 -0.59828019142136668 -80.42729949951169 -0.66018700599661884 -80.382766723632784 -0.65260106325153799 -80.301338195800795 -0.63720726966849384 -80.387039184570199 -0.37971818447104516 -80.488044738769503 0.10853705555201998 -80.042701721191406 0.56905555725110446 -80.008026123046818 0.75913298130041085 -80.090568542480469 0.96337008476270125 -79.728378295898352 1.0730495452881001 -79.18087768554679 1.1458087127513295 -79.117072912374653 1.1291508358891462 -78.744530993501925 1.1553576772465812 -78.248824104418674 1.1837137884624063 -77.916704192826913 1.0023809532448782 -78.069551086879571 0.9248793247845144 -78.256128063997878 0.8017033389003585 -78.609034687049885 0.66145214573013844 -78.794118753445531 0.49079427379085078 -78.936639541165249 0.21654406471831888 -79.034911642896461 -0.12142088795830852 -79.173546208201628 -0.61552245260899197 -79.277198674378681 -0.89877102160087674 -79.312545075182115 -1.3653751573455009 -79.299859516864814 -1.7388951211616723 -79.282949628382895 -1.9642744618357528 -79.327687228030143 -2.2912008673300499 -79.453266432745423 -2.417286884806455 -79.516922165146923 -2.5022231873703173 -79.598158012840301 -2.6856854414579243 -79.627257421714432 -2.9108650577801831 -79.663734284937462 -3.101875421453606 -79.750629427299501 -3.1923761528731722 -79.811591343150681 -3.2147515269483646 -79.874097560106875 -3.2153399269697722 -79.900339022318661 -3.1899615354982518 -79.937665446519233 -3.0201584026252224 -79.846978155422676 -2.5663254611593755 -79.715501535041398 -2.4206744551596842 -79.78769904979228 </gml:posList>
+                                </gml:LinearRing>
+                            </gml:exterior>
+                        </gml:Polygon>
+                    </gpml:value>
+                    <gml:description></gml:description>
+                    <gpml:valueType xmlns:gml="http://www.opengis.net/gml">gml:Polygon</gpml:valueType>
+                </gpml:ConstantValue>
+            </gpml:centerLineOf>
+        </gpml:TerraneBoundary>
+    </gml:featureMember>
+</gpml:FeatureCollection>

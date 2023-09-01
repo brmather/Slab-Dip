@@ -1,0 +1,654 @@
+9020  0.0   90.0    0.0    0.0  101 !Mezcalera Plate
+9020  0.0   90.0    0.0    0.0  101 !MEZ-NAM (this study)
+9020 140.0   90.0    0.0    0.0  101 !Cessation of spreading
+9020 150.0  -42.4688  -80.9291   -6.0965  101 !MEZ-NAM spreading
+9020 160.0   34.941  109.3892    8.4431  101 !MEZ-NAM spreading
+9020 171.0   35.0433  112.7697    9.4443  101 !MEZ-NAM spreading
+9020 180.0   26.1316  -34.0207   -2.5108  101 !MEZ-NAM spreading
+9020 200.0   90.0    0.0    0.0  101 !MEZ-NAM
+9022  0.0   20.2871 -138.3719   33.2524  1072 !Orcas Plate
+9022 80.0   20.2871 -138.3719   33.2524  1072 !XXX to Wrangellia
+9022 80.0   61.0618  124.889  -18.2173  101 !Subduction under INS
+9022 95.0   60.3048   95.2599  -25.637  101 !
+9022 110.0   58.3623   76.5636  -33.9479  101 !
+9022 121.0   56.5673   68.1112  -41.5603  101 !
+9022 125.0   55.8243   66.777  -44.1957  101 !
+9022 130.0   54.8532   66.5203  -46.7352  101 !
+9022 140.0   54.0238   63.4399  -50.1049  101 !XXX to NAM
+9022 140.0   27.7752    4.946   -4.7224  000 !Fixed above Cascadia Root slab
+9022 170.0   27.7752    4.946   -4.7224  000 !Fixed above Cascadia Root slab
+9022 200.0  -36.5761   57.2226  -17.0185  000 !Fixed wrt mantle
+9024  0.0   90.0    0.0    0.0  101 !Angayucham plate
+9024 130.0   90.0    0.0    0.0  101 !Cessation of spreading
+9024 140.0   32.9881  -41.9068   -6.1893  101 !ANG-NAM spreading
+9024 150.0   28.0425  -51.6264  -11.6163  101 !ANG-NAM spreading
+9024 160.0   31.3718  -48.2149  -17.7819  101 !ANG-NAM spreading
+9024 170.0  -45.9087  125.6688   24.5687  101 !ANG-NAM spreading
+9040  0.0   79.5622   23.5619   23.0751  101 !Alaska plate
+9040 55.0   77.6258   32.4509   23.9196  101 !Shutdown of ANG trench
+9040 70.0   84.6418  -73.2953   24.8622  101 !Keep ANG trench above slab
+9040 83.0   74.6472  -94.6263   21.1064  101 !Keep ANG trench above slab
+9040 109.0   39.9394 -121.0649   14.2605  101 !XXX to NAM (start of Angayucham override)
+9040 109.0   54.6921 -162.8759   69.9716  101030 !Fixed to Koyukuk
+9040 200.0   54.6921 -162.8759   69.9716  101030 !Fixed to Koyukuk
+9052  0.0   90.0    0.0    0.0  224 !Proto-Caribbean Plate
+9052 85.0    2.3759  -70.8022   11.784  224 !XXX to Caribbean
+9052 85.0   41.6942  -91.4714  -41.3102  201 !trenches maintained above PCA slabs	
+9052 95.0   41.6942  -91.4714  -41.3102  201 !trenches maintained above PCA slabs
+9052 100.0   45.5465  -93.5335  -38.6783  201 !
+9052 104.0   45.6345  -92.2952  -41.013  201 !
+9052 105.0   46.3831  -93.662  -40.7531  201 !
+9052 110.0   49.901  -96.0822  -42.0902  201 !
+9052 120.0   57.4713 -101.7931  -46.2827  201 !
+9052 125.0   59.2302 -101.1917  -45.8825  201 !
+9052 130.0   60.1568 -103.9047  -45.2472  201 !
+9052 131.0   60.1295 -104.0844  -45.0841  201 !
+9052 140.0   60.4143 -105.7797  -43.7968  201 !
+9052 147.0   58.7799 -103.3742  -43.3283  201 !trenches maintained above Southern Farallon slabs
+9052 170.0   90.0    0.0    0.0  201 !trenches maintained above Southern Farallon slabs
+9052 200.0   90.0    0.0    0.0  201 !
+9932  0.0   90.0    0.0    0.0  918 !KUL2-KUL Kula/Farallon-Kula
+9932 46.0   90.0    0.0    0.0  918 !KUL2-KUL
+9932 46.0   50.2823  -56.9003   24.3616  101 !KUL2-KUL
+9932 60.0   40.4567  -65.8945   25.6415  101 !
+9932 82.99   35.2791  -83.1005   25.4467  101 !
+9932 83.0    2.62  -80.983   23.158  101 !KUL2-KUL Far iso that become NAm @xo_ys
+9932 83.0   67.3001  123.3272   88.3639  902 !KUL2-FAR Kula/Farallon-Farallon crossover
+9932 240.0   64.64  114.65   92.7  902 !KUL2-FAR 
+95104  0.0   90.0    0.0    0.0  101 !Mexico
+95104 40.0   90.0    0.0    0.0  101 !15 degrees Eocene rotation (Nowicki et al., 1993)
+95104 70.0   34.1355 -111.3426  -16.1475  101 !15 degrees Eocene rotation (Nowicki et al., 1993)
+95104 130.0   34.1355 -111.3426  -16.1475  101 !Mexico rotated out to original position (Urrutia-Fukugauchi, 1984)
+95104 150.0   90.0    0.0    0.0  101 !Opening of Gulf of Mexico
+95104 170.0   90.0    0.0    0.0  101 !
+95104 200.0   35.0  -14.0   -1.5  101 !  MEX-NAM
+95105  0.0   90.0    0.0    0.0  105 !Baja California
+95105  6.0   90.0    0.0    0.0  105 !Baja California
+95105  6.0   57.0359  -53.993    5.5522  95104 !
+95105 200.0   57.0359  -53.993    5.5522  95104 !Baja California
+95204  0.0   90.0    0.0    0.0  95215 !  HON-GUE Honduras/Chortis-Guerrero
+95204 10.9   42.01  -95.65   -2.72  95215 !  HON-GUE Ross & Scotese 1988
+95204 20.1   36.06  -94.12   -6.0  95215 !  HON-GUE Ross & Scotese 1988
+95204 26.0  -59.2   72.95    5.84  95215 !  HON-GUE Ross & Scotese 1988
+95204 28.7  -36.23   86.29   10.35  95215 !  HON-GUE Ross & Scotese 1988
+95204 41.5  -38.48   86.72   16.41  95215 !  HON-GUE Ross & Scotese 1988
+95204 47.9  -36.85   86.99   21.96  95215 !  HON-GUE Pindell Position Ross & Scotese 1988
+95204 63.5  -35.77   86.99   28.91  95215 !  HON-GUE Ross & Scotese 1988
+95204 74.3  -35.77   86.99   28.91  95215 !  HON-GUE Ross & Scotese 1988
+95204 84.6  -35.77   87.51   34.1  95215 !  HON-GUE Ross & Scotese 1988
+95204 600.0  -35.77   87.51   34.1  95215 !  HON-GUE Ross & Scotese 1988
+95205  0.0   90.0    0.0    0.0  95104 !Yucatan
+95205 130.0   90.0    0.0    0.0  95104 !Yucatan
+95205 150.0   22.3542  -83.8654  -18.003  95104 !Yucatan
+95205 150.0   90.0    0.0    0.0  2004 !Yucatan
+95205 200.0   90.0    0.0    0.0  2004 !Yucatan
+95208  0.0   90.0    0.0    0.0  95205 !Chiapas
+95208 200.0   90.0    0.0    0.0  95205 !Chiapas
+95209  0.0   90.0    0.0    0.0  95205 !Cuchumantes
+95209 200.0   90.0    0.0    0.0  95205 !Cuchumantes
+95210  0.0   90.0    0.0    0.0  95204 !Polochic-Motahua
+95210 200.0   90.0    0.0    0.0  95204 !Polochic-Motahua
+95211  0.0   90.0    0.0    0.0  95204 !Santa Cruz
+95211 200.0   90.0    0.0    0.0  95204 !Santa Cruz
+95212  0.0   90.0    0.0    0.0  95204 !Guayape
+95212 200.0   90.0    0.0    0.0  95204 !Guayape
+95213  0.0   90.0    0.0    0.0  95204 !Motogua-Jocotan
+95213 200.0   90.0    0.0    0.0  95204 !Motogua-Jocotan
+95215  0.0   90.0    0.0    0.0  95104 !Guerrero
+95215 143.0   90.0    0.0    0.0  95104 !Guerrero
+95215 143.1   90.0    0.0    0.0  95104 !  GUE-MEX Ross and Scotese 1988                            
+95215 156.6   79.37  -43.54   -0.44  95104 !  GUE-MEX BSMA (Blake Spur Magnetic Anomaly), Ross and Scotese 1988
+95215 159.4   79.37  -43.54   -2.37  95104 !  GUE-MEX Ross and Scotese 1988                                
+95215 169.0   79.37  -43.54   -3.92  95104 !  GUE-MEX Initial Rifting, Ross and Scotese 1988               
+95215 175.0   79.37  -43.54   -4.34  95104 !  GUE-MEX Ross and Scotese 1988                         
+95215 600.0   79.37  -43.54   -4.34  95104 !  GUE-MEX 
+1002  0.0   90.0    0.0    0.0  101 !North America-deep water (Selwyn Basin, Kootenay)
+1002 200.0   90.0    0.0    0.0  101 !Statioary relative to North America
+100210  0.0   90.0    0.0    0.0  101 !Basinal Strata (Western Selwyn Basin- Johnston, 2001)%%%
+100210 41.6   90.0    0.0    0.0  101 !Tintina Fault slip ends
+100210 67.0   90.0    0.0    0.0  101 !Tintina Fault Slip begins "400-430 km of displacement on the Tintina fault must be of latest Cretaceous  or younger" Gabrielse 2006
+100210 200.0   90.0    0.0    0.0  101 !Tintina offset
+100220  0.0   90.0    0.0    0.0  1030 !Yukon-Tanana Upland (North America-deep water)
+100220 200.0   90.0    0.0    0.0  1030 !Stationary relative to Yukon Tanana
+100230  0.0   90.0    0.0    0.0  100220 !Ancestral North America
+100230 200.0   90.0    0.0    0.0  100220 !Stationary relative to Basinal Strata
+100240  0.0   90.0    0.0    0.0  100220 !Ancestral North America
+100240 200.0   90.0    0.0    0.0  100220 !Stationary relative to YT Uplands
+1003  0.0   90.0    0.0    0.0  101 !Mackenzie Platform Thrust belt
+1003 200.0   90.0    0.0    0.0  101 !Stationary relative to North America 
+100310  0.0   90.0    0.0    0.0  101 !South Rocky Mountains Fold and Thrust Belt
+100310 36.0   50.8618 -116.535    4.2479  101 !beginning of Basin and Range extension
+100310 170.0   50.8618 -116.535    4.2479  101 !SRMFTB
+100310 200.0  -43.18   70.37  -56.93  101 !Thrust belt aligned N-S parallel to continental margin
+1003101  0.0   90.0    0.0    0.0  100310 !
+1003101 36.0   51.3517   79.9749    1.0157  100310 !
+1003101 200.0   90.0    0.0    0.0  100310 !
+1003102  0.0   90.0    0.0    0.0  100310 !
+1003102 200.0   90.0    0.0    0.0  100310 !
+1003103  0.0   90.0    0.0    0.0  100310 !
+1003103 200.0   90.0    0.0    0.0  100310 !
+100311  0.0   90.0    0.0    0.0  100310 !Golconda Roberts Mts
+100311 36.0   49.8119   63.3001    0.897  100310 !
+100311 200.0   49.8119   63.3001    0.897  100310 !
+100312  0.0   90.0    0.0    0.0  100311 !Backarc basin (GR north)
+100312 200.0   90.0    0.0    0.0  100311 !
+100313  0.0   90.0    0.0    0.0  100312 !Native Jurassic arc (GR north)
+100313 200.0   90.0    0.0    0.0  100312 !
+1004  0.0   90.0    0.0    0.0  1033 !Cassiar
+1004 100.0   90.0    0.0    0.0  1033 !Faulting over by 100 Ma and Cassiar is in present day position relative to Quesnellia
+1004 115.0  -17.18  172.12    1.5  1033 !225km dextral translation of Ketchika fault between 115-100Ma (Gabrielse et. al., 2006)
+1004 200.0  -17.18  172.12    1.5  1033 !Offset of Ketchika fault
+100410  0.0   90.0    0.0    0.0  100210 !Cassiar subterrane 1
+100410 200.0   90.0    0.0    0.0  100210 !Stationary to Yukon Tanana Banana
+100420  0.0   90.0    0.0    0.0  1004 !Cassiar subterrane2
+100420 50.0   90.0    0.0    0.0  1004 !Cassiar stretched out at time of collision
+100420 70.0   21.23    0.59    6.11  1004 !Cassiar stretched out at time of collision
+100420 200.0   21.23    0.59    6.11  1004 !Cassiar stretched out at time of collision
+100430  0.0   90.0    0.0    0.0  1004 !Cassiar subterrane3
+100430 50.0   90.0    0.0    0.0  1004 !Cassiar stretched out at time of collision
+100430 70.0   36.6 -153.62  -18.19  1004 !Cassiar stretched out at time of IM collision
+100430 140.0   64.45  -65.98   19.96  1004 !Rotated to avoid collison with 101
+100430 200.0   -5.31    8.42   11.14  1004 !Rotated to avoid collison with 101
+1006  0.0   90.0    0.0    0.0  101 !Miogeocline
+1006 200.0   90.0    0.0    0.0  101 !Stationary relative to North America
+1007  0.0   90.0    0.0    0.0  101 !Yakutat
+1007 45.0   90.0    0.0    0.0  101 !Stationary relative to North America
+1008  0.0   90.0    0.0    0.0  1072 !Chugach
+1008 45.0   90.0    0.0    0.0  1072 !Present day position (Irving et al. 1996)
+1008 55.0   62.9757 -168.7042   17.0411  1072 !Translation of Chugach up Insular to present day location
+1008 60.0   48.3374 -133.1528  -15.6191  1072 !Translation of Chugach up Insular to present day location
+1008 62.0   55.3697 -142.8221  -44.7715  1072 !Translation of Chugach up Insular to present day location
+1008 65.0   55.476 -143.8702  -56.6287  1072 !Translation of Chugach up Insular to present day location
+1008 70.0   54.5068 -143.8875  -60.6059  1072 !Translation of Chugach up Insular to present day location
+1008 75.0   54.4492 -144.4427  -72.715  1072 !Translation of Chugach up Insular to present day location
+1008 80.0   54.3913 -144.8098  -84.8325  1072 !Translation of Chugach up Insular to present day location
+1008 84.0  -54.944   34.8245  107.7556  1072 !Translation of Chugach up Insular to present day location
+1008 90.0  -50.0795   33.2383   84.7837  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+1008 123.0  -51.2114   33.831   94.3832  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+1008 200.0  -50.8753   33.3413   85.1006  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+100810  0.0   90.0    0.0    0.0  1072 !Chugach subterrane 1
+100810 45.0   90.0    0.0    0.0  1072 !Present day position (Irving et al. 1996)
+100810 55.0   56.6484 -140.04   -9.0339  1072 !Translation of Chugach up Insular to present day location
+100810 70.0  -56.3634   39.7438   22.5867  1072 !Translation of Chugach up insular to its present day location
+100810 75.0  -50.1664   22.3281    9.014  1072 !Translation of Chugach up Insular to present day location
+100810 82.0  -38.6151    7.657    7.1596  1072 !Translation of Chugach up Insular to present day location
+100810 86.0  -50.9431  114.7187   -8.7021  1072 !Translation of Chugach up Insular to present day location
+100810 90.0  -47.5357  133.0572  -10.3688  1072 !Translation of Chugach up Insular to present day location
+100810 123.0   58.3021  -81.1174   17.4964  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+100810 140.0  -58.63   75.25  -27.53  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+100810 200.0  -58.63   75.25  -27.53  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+100820  0.0   90.0    0.0    0.0  1072 !Northern Valdez
+100820 45.0   90.0    0.0    0.0  1072 !Present day position (Irving et al. 1996)
+100820 200.0    7.36  -20.22    7.74  1072 !Translation of Chugach up insular to its present day location
+100821  0.0   90.0    0.0    0.0  1072 !Southern Valdez
+100821 200.0   90.0    0.0    0.0  1072 !
+100830  0.0   90.0    0.0    0.0  1072 !Chugach subterrane 3
+100830 45.0   90.0    0.0    0.0  1072 !Present day position (Irving et al. 1996)
+100830 70.0  -59.27   31.48   12.78  1072 !Translation of Chugach up insular to its present day location
+100830 200.0  -52.12   29.72   43.47  1072 !Translation of Chugach up insular to its present day location
+100840  0.0   90.0    0.0    0.0  1072 !Chugach subterrane 4
+100840 45.0   90.0    0.0    0.0  1072 !Present day position (Irving et al. 1996)
+100840 55.0   58.5946 -147.1281  -47.3064  1072 !Translation of Chugach up Insular to present day location
+100840 60.0   58.4363 -146.2044  -75.8123  1072 !Translation of Chugach up Insular to present day location
+100840 65.0   57.6378 -145.6169  -80.6437  1072 !Translation of Chugach up Insular to present day location
+100840 70.0   57.5155 -145.1329 -100.8171  1072 !Translation of Chugach up Insular to present day location
+100840 75.0   57.4871 -144.7492 -120.9788  1072 !Translation of Chugach up Insular to present day location
+100840 80.0   56.4854 -144.9645 -115.6409  1072 !Translation of Chugach up Insular to present day location
+100840 84.0  -55.5951   34.948  113.7962  1072 !Translation of Chugach up Insular to present day location
+100840 90.0  -50.9391   33.1986   89.7083  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+100840 123.0  -51.4782   33.288   92.2485  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+100840 200.0  -51.8885   33.1662   92.1238  1072 !Chugach outboard of Insular (Garver & Davidson, 2015)
+100850  0.0   90.0    0.0    0.0  1072 !Chugach subterrane 5
+100850 200.0   90.0    0.0    0.0  1072 !
+100851  0.0   90.0    0.0    0.0  1072 !Chugach subterrane 6
+100851 200.0   90.0    0.0    0.0  1072 !
+1009  0.0   90.0    0.0    0.0  101050 !Farewell
+1009 45.0   90.0    0.0    0.0  101050 !Present day position (Irving et al. 1996)
+1009 95.0  -72.09    1.37    8.95  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab
+1009 100.0  -70.8   33.41    9.74  101050 !Constrained by seismic tomography slab
+1009 154.0  -70.8   33.41    9.74  101050 !Constrained by seismic tomography slab
+101010  0.0   90.0    0.0    0.0  1014 !Koyukuk
+101010 50.0   90.0    0.0    0.0  1014 !Buckling of Alaskan Orocline (Johnston, 2001)
+101010 90.0  -58.35   24.24   14.4  1014 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab. Avoid collision with AA 1004.
+101010 95.0  -56.96   25.35   29.95  1014 !XXX Crossover for terrane to follow 1014
+101010 95.0  -19.61 -145.17  -16.66  000 !Constrained by seismic tomography slab
+101010 200.0  -19.61 -145.17  -16.66  000 !Constrained by seismic tomography slab
+101020  0.0   90.0    0.0    0.0  101010 !Koyukuk
+101020 70.0   90.0    0.0    0.0  101010 ! Present day position (Irving et al. 1996)
+101020 74.0  -66.83   26.25  -27.69  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101020 80.0  -67.05   28.7  -49.43  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101020 95.0  -66.59   28.92 -173.98  101010 !XXX 000 to 10102
+101020 95.0  -66.78   50.35 -170.25  000 !Constrained by seismic tomography slab
+101020 200.0  -66.78   50.35 -170.25  000 !Constrained by seismic tomography slab
+101030  0.0   90.0    0.0    0.0  101040 !Koyukuk
+101030 45.0   90.0    0.0    0.0  101040 ! Present day position (Irving et al. 1996)
+101030 75.0  -63.3   16.45   26.67  101040 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101030 80.0  -62.65   23.42   62.41  101040 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101030 90.0  -63.3529   21.9775   75.1308  101040 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101030 100.0  -63.3843   20.6685   96.5454  101040 !Constrained by seismic tomography slab
+101030 110.0  -64.17   23.62  179.51  101040 !XXX 000 to 10104
+101030 110.0  -28.95   46.81   49.16  000 !Constrained by seismic tomography slab
+101030 200.0  -28.95   46.81   49.16  000 !Constrained by seismic tomography slab
+101040  0.0   90.0    0.0    0.0  101050 !Koyukuk
+101040 55.0   90.0    0.0    0.0  101050 !Buckling of Alaskan Orocline(Johnston, 2001)
+101040 65.0  -55.83   30.67  -29.23  101050 !Buckling of Alaskan Orocline(Johnston, 2001)
+101040 70.0  -58.32   22.04  -43.49  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101040 74.0  -59.28   22.0  -55.11  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101040 80.0  -59.4   21.18  -76.23  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101040 90.0  -59.37   19.56  -76.46  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101040 100.0  -58.8786   20.3521 -121.3536  101050 !
+101040 110.0  -58.44   19.79 -165.05  101050 !XXX 000 to 10105
+101040 110.0  -68.85   62.3 -141.35  000 !Constrained by seismic tomography slab
+101040 150.0  -68.85   62.3 -141.35  000 !Constrained by seismic tomography slab
+101040 177.0  -68.85   62.3 -141.35  000 !Constrained by seismic tomography slab
+101050  0.0   90.0    0.0    0.0  1030 !Koyukuk
+101050 90.0   90.0    0.0    0.0  1030 !Buckling of Alaskan Orocline(Johnston, 2001)
+101050 100.0  -62.5   30.69   14.14  1030 !collision with IM/IS
+101050 109.99  -58.2956   18.6833   13.0172  1030 !
+101050 110.0  -63.24   29.95   14.15  1030 !XXX 000 to 1030 Collision of IMS with Angayucham arc.  IMS pushes Alaska northward therefore Angayucham arc moves relative to IMS. (Johnston, 2001)
+101050 110.0   -6.57   52.58   47.06  000 !Constrained by seismic tomography slab
+101050 154.0  -17.04   52.8   52.97  000 !Appears with mantle tomography slab
+101100  0.0   90.0    0.0    0.0  101040 !Ruby
+101100 45.0   90.0    0.0    0.0  101040 !Present day position (Irving et al. 1996)
+101100 100.0  -63.65   56.16  -14.69  101040 !Constrained by seismic tomography slab
+101100 177.0  -63.65   56.16  -14.69  101040 !XXX 10103 to 10104
+101100 177.0  -65.93   22.68  166.25  101030 !Constrained by seismic tomography slab
+101100 200.0  -65.93   22.68  166.25  101030 !Constrained by seismic tomography slab
+101110  0.0   90.0    0.0    0.0  101010 !Ruby
+101110 200.0   90.0    0.0    0.0  101010 !Stationary to Koyukuk 10101
+101120  0.0   90.0    0.0    0.0  101270 !Ruby
+101120 45.0   90.0    0.0    0.0  101270 !Present day position (Irving et al. 1996)
+101120 100.0  -31.86 -175.01   -0.69  101270 !Constrained by seismic tomography slab
+101120 200.0  -31.86 -175.01   -0.69  101270 !Constrained by seismic tomography slab
+101130  0.0   90.0    0.0    0.0  1014 !Seward Peninsula (Ruby)
+101130 45.0   90.0    0.0    0.0  1014 ! Present day position (Irving et al. 1996)
+101130 84.0   64.39 -170.11   37.78  1014 !Southward translation to present day position begins(Amato et al. 2003)
+101130 140.0   64.39 -170.11   37.78  1014 !Attached to tip of Arctic Alaska
+101130 200.0   64.39 -170.11   37.78  1014 !Attached to tip of Arctic Alaska
+101200  0.0   90.0    0.0    0.0  101100 !Angayucham
+101200 45.0   90.0    0.0    0.0  101100 !Present day position (Irving et al., 1996)
+101200 100.0  -63.66   38.52  -11.44  101100 !Constrained by seismic tomography slab
+101200 177.0  -63.66   38.52  -11.44  101100 !XXX 10103 to 101100
+101200 177.0  -66.65   22.82  154.9  101030 !Constrained by seismic tomography slab
+101200 200.0  -66.65   22.82  154.9  101030 !Constrained by seismic tomography slab
+101210  0.0   90.0    0.0    0.0  101010 !Angayucham subterrane 1
+101210 200.0   90.0    0.0    0.0  101010 !Stationary relative to Koyukuk
+101220  0.0   90.0    0.0    0.0  101010 !Angayucham subterrane 2 %%%
+101220 200.0  -55.44   16.02 -154.04  1014 !Constrained by seismic tomography slab
+101230  0.0   90.0    0.0    0.0  101010 !Angayucham subterrane 3
+101230 45.0   90.0    0.0    0.0  101010 !Present day position (Irving et al. 1996)
+101230 85.0   67.52 -144.78  -36.35  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101230 100.0   72.1 -142.2  -36.41  101010 !Constrained by seismic tomography slab
+101230 130.0   69.82 -123.55  -36.61  101010 !Constrained by seismic tomography slab
+101230 200.0   69.82 -123.55  -36.61  101010 !Constrained by seismic tomography slab
+101240  0.0   90.0    0.0    0.0  101050 !Angayucham subterrane 4
+101240 45.0   90.0    0.0    0.0  101050 !Stationary relative to Koyukuk
+101240 154.0   22.26   28.11   -3.67  101050 !Calculated interactively by GPlates
+101250  0.0   90.0    0.0    0.0  101010 !Angayucham subterrane 5
+101250 45.0   90.0    0.0    0.0  101010 !Present day position (Irving et al. 1996)
+101250 55.0   22.05   47.78    1.25  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101250 60.0   23.75   46.19    1.26  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101250 65.0  -10.04  -76.22   -4.28  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101250 70.0   23.49    3.43    1.61  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101250 85.0  -24.03 -161.25   -2.35  101010 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101250 130.0   -8.74  -74.92   -6.01  101010 !Constrained by seismic tomography slab
+101250 200.0   -8.74  -74.92   -6.01  101010 !Constrained by seismic tomography slab
+101260  0.0   90.0    0.0    0.0  101050 !Angayucham subterrane 6
+101260 45.0   90.0    0.0    0.0  101050 !Present day position (Irving et al. 1996)
+101260 55.0  -69.1   23.14   -6.39  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101260 75.0  -64.44   38.4  -19.16  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101260 85.0  -63.08   37.03  -25.57  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101260 95.0  -60.75   39.04  -32.11  101050 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101260 100.0  -60.75   39.04  -32.11  101050 !Constrained by seismic tomography slab
+101260 154.0  -60.75   39.04  -32.11  101050 !Constrained by seismic tomography slab
+101270  0.0   90.0    0.0    0.0  101020 !Angayucham subterrane 7
+101270 45.0   90.0    0.0    0.0  101020 !Present day position (Irving et al. 1996)
+101270 70.0  -64.61   23.76   15.22  101020 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101270 75.0  -64.07   22.47   18.29  101020 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.  
+101270 85.0  -68.43   17.38   24.5  101020 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+101270 100.0  -67.24   17.76   33.65  101020 !Constrained by seismic tomography slab
+101270 200.0  -67.24   17.76   33.65  101020 !Constrained by seismic tomography slab
+101280  0.0   90.0    0.0    0.0  101030 !Angayucham subterrane 8
+101280 45.0   90.0    0.0    0.0  101030 !Present day position (Irving et al., 1996)
+101280 100.0  -63.55   19.43  -53.63  101030 !Constrained by seismic tomography slab
+101280 200.0  -63.55   19.43  -53.63  101030 !Constrained by seismic tomography slab
+101290  0.0   90.0    0.0    0.0  101010 !Angayucham subterrane 9
+101290 200.0   90.0    0.0    0.0  101010 !Stationary relative to Koyukuk
+1013  0.0   90.0    0.0    0.0  101040 !Kilbuck
+1013 177.0   90.0    0.0    0.0  101040 !Appears with seismic tomography slab
+1014  0.0   90.0    0.0    0.0  1030 !Arctic Alaska
+1014 45.0   90.0    0.0    0.0  1030 !Present day position (Irving et al., 1996)
+1014 60.0  -46.9   34.3  -18.47  1030 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+1014 65.0  -53.86   28.73  -57.3  1030 !Buckling of Alaskan Orocline(Johnston, 2001) over seismic tomography slab.
+1014 70.0  -55.11   27.34  -60.64  1030 ! XXX 000 to 1030 
+1014 70.0  -81.51   50.54  -45.52  000 !Acts as a stopper for buckling arc.  Stationary over seismic tomography slab.
+1014 75.0  -81.51   50.54  -45.52  000 !Acts as a stopper for buckling arc.  Stationary over seismic tomography slab.
+1014 100.0  -86.61  147.36  -27.13  000 !Acts as a stopper for buckling arc.  Stationary over seismic tomography slab.
+1014 170.0  -74.08   36.1  -98.57  000 !Constrained by seismic tomography slab
+1014 200.0  -74.08   36.1  -98.57  000 !Constrained by seismic tomography slab
+101410  0.0   90.0    0.0    0.0  103 !North Slope status quo
+101410 200.0   90.0    0.0    0.0  103 !North Slope status quo
+1015  0.0   90.0    0.0    0.0  101 !Prince William 
+1015 45.0   90.0    0.0    0.0  101 !Final position relative to 101
+1015 50.0   44.0489  116.5324   -3.0143  101 !XXX to NAM
+1015 50.0   57.4607  -63.6795  -24.6499  9932 !Position above Kula Slab on Kronosky Plate
+1015 51.0   59.0294  -64.4694  -23.8015  9932 !Position above Kula Slab on Kronosky Plate
+1015 57.0   60.1395  -59.7019  -22.1354  9932 !Position above Kula Slab on Kronosky Plate
+1015 83.0   54.735  -38.1439  -16.941  9932 !Position above Kula Slab on Kronosky Plate
+1015 83.0   34.1477  -81.2477  -74.5793  926 !
+1015 127.0   34.1477  -81.2477  -74.5793  926 !Prince William
+101510  0.0   90.0    0.0    0.0  1015 !Valdez slither
+101510 127.0  -53.14   33.2296  -28.1279  1015 !Above Kula slab
+101520  0.0   90.0    0.0    0.0  406 !Kronosky
+101520  6.0   90.0    0.0    0.0  406 !Accretion to Kamchatka
+101520  6.0   64.5277  -77.4541   -4.9986  901 !travelling on Pacific plate
+101520 17.0   69.9795 -148.6369   -3.133  901 !
+101520 27.0   45.3007 -126.011   -3.9171  901 !
+101520 47.0   17.5253 -142.9002   -4.4333  901 !shutdown of Kronosky arc
+101520 47.0   28.2693  -84.3865   -2.0067  9932 !Position above Kula slab on Kronosky palte
+101520 83.0   28.2693  -84.3865   -2.0067  9932 !Kronosky (Domeier et al. 2017)
+101521  0.0   90.0    0.0    0.0  101520 !Kronosky subterrane 1
+101521  6.0   90.0    0.0    0.0  101520 !Kronosky subterrane 1
+101521 40.0   56.8584  165.767   82.0721  101520 !Kronosky subterrane 1
+101521 83.0   56.8584  165.767   82.0721  101520 !Kronosky subterrane 1
+101522  0.0   90.0    0.0    0.0  101520 !Kronosky subterrane 2
+101522  6.0   90.0    0.0    0.0  101520 !Kronosky subterrane 2
+101522 40.0   57.3552  157.3949  -26.0336  101520 !Kronosky subterrane 2
+101522 83.0   57.3552  157.3949  -26.0336  101520 !Kronosky subterrane 2
+101530  0.0   90.0    0.0    0.0  406 !Olutorsky
+101530 10.0   90.0    0.0    0.0  406 !Accretion to Kamchatka
+101530 19.0   51.1317  148.4891  -37.8229  406 !Accretion to Kamchatka
+101530 19.0   66.7058  147.1351  -58.8743  901 !
+101530 47.0   66.7058  147.1351  -58.8124  901 !shutdown of arc
+101530 47.0   67.1734  137.9482  -56.9453  9932 !Olutorsky
+101530 83.0   71.4399  129.864  -58.3529  9932 !Olutorsky
+1016  0.0   90.0    0.0    0.0  1072 !Pacific Rim
+1016 60.0   90.0    0.0    0.0  1072 ! Final position relative to Wrangellia
+1016 75.0  -58.62   64.71   27.58  1072 !Rotation to avoid collision
+1016 80.0  -18.4295   34.4284  -12.1117  1072 !XXX Orcas to Wrangellia
+1016 80.0   19.8406 -134.176  -21.1368  9022 !Accretion to Insular
+1016 200.0   19.8406 -134.176  -21.1368  9022 !Position above Cascadia Root slab
+1017  0.0   90.0    0.0    0.0  1072 !Crescent and Siletzia Terranes
+1017 53.0  -48.92   55.29  -14.0  1072 !Rotated to avoid collision with Pacific Rim 1016
+1018  0.0   90.0    0.0    0.0  101 !Yukon Flats
+1018 200.0   90.0    0.0    0.0  101 !Stationary relative to North America
+1030  0.0   90.0    0.0    0.0  103001 !Yukon-Tanana (outer)
+1030 173.0   90.0    0.0    0.0  103001 !Cache Creek Ocean closed (Mihalynuk, 2004)
+1030 190.0  -68.25   32.32   50.6  103001 !Cache Creek Ocean closing (Mihalynuk, 2004); avoid collision with INS
+1030 200.0  -69.65   29.93   67.32  103001 !Cache Creek Ocean open. Size constrained by INS and North America.
+103001  0.0   90.0    0.0    0.0  101 !Yukon-Tanana (inner)
+103001 50.0   90.0    0.0    0.0  101 ! Present day position (Irving et al., 1996)
+103001 57.0   38.3554 -160.9698  -22.1499  101 !Shutdown of Angayucham arc and final northward translation
+103001 62.0   39.3003 -159.5252  -31.778  101 !Remain south of Angayucham slab
+103001 70.0  -36.79   20.22   39.95  101 !Paleomag ~17 degrees of displacement from present day NA (Enkin, 2006)
+103001 78.5  -36.76   19.39   42.27  101 !Paleomag ~19.5 degrees of displacement from presend day NA (Enkin, 2006)
+103001 90.0  -32.2   13.88   36.25  101 !Paleomag ~20 degrees of displacement from present day position (Enkin, 2006)
+103001 150.0  -31.22    8.76   24.76  101 !collision with Insular terrane
+103001 173.0  -37.68   12.31   26.2  101 !Hard docked to continental margin (Nixon et al., 1993)
+103001 185.0  -37.68   12.31   26.2  101 !Hard docked to continental margin (Nixon et al., 1993)
+103001 200.0   26.16  -29.15   11.15  101 !Cache Creek Ocean open 
+103010  0.0   90.0    0.0    0.0  103001 !Yukon-Tanana
+103010 200.0   90.0    0.0    0.0  103001 !Yukon-Tanana
+1031  0.0   90.0    0.0    0.0  1033 !Slide Mountain
+1031 200.0   90.0    0.0    0.0  1033 !Slide Mountain
+103110  0.0   90.0    0.0    0.0  100210 !Slide Mountain
+103110 200.0   90.0    0.0    0.0  100210 !Slide Mountain
+103120  0.0   90.0    0.0    0.0  1031 !Slide Mountain
+103120 50.0   90.0    0.0    0.0  1031 !Final position relative to 1031
+103120 70.0   18.15   -4.43   10.19  1031 !Avoid collision
+103120 200.0   18.15   -4.43   10.19  1031 !Avoid collision
+103130  0.0   90.0    0.0    0.0  1031 !Slide Mountain
+103130 50.0   90.0    0.0    0.0  1031 !Final position relative to 1031
+103130 70.0   18.15   -4.43   10.19  1031 !Avoid collision
+103130 200.0  -41.86   28.95   46.65  1031 !Avoid collision
+1032  0.0   90.0    0.0    0.0  1030 !Seventymile
+1032 200.0   90.0    0.0    0.0  1030 !Seventymile
+1033  0.0   90.0    0.0    0.0  103401 !Quesnellia main
+1033 50.0   90.0    0.0    0.0  103401 !Quesnellia is strung out to original position between 70-50Ma
+1033 70.0  -44.77   36.88   -8.59  103401 !Quesnellia is strung out to original position between 70-50Ma
+1033 173.0  -44.77   36.88   -8.59  103401 !***XXX 103001 to 103401
+1033 173.0  -19.88   12.61  -18.97  103001 !Cache Creek ocean open
+1033 200.0  -19.88   12.61  -18.97  103001 !Cache Creek ocean open
+103301  0.0   90.0    0.0    0.0  103302 !Quesnellia sub 1
+103301 50.0   90.0    0.0    0.0  103302 !Quesnellia is strung out to original position between 70-50Ma
+103301 70.0  -61.71   55.09    9.48  103302 !Quesnellia is strung out to original position between 70-50Ma
+103301 200.0  -61.71   55.09    9.48  103302 !Calculated interactively by GPlates
+103302  0.0   90.0    0.0    0.0  103303 !Quesnellia sub 2
+103302 50.0   90.0    0.0    0.0  103303 !Quesnellia is strung out to original position between 70-50Ma
+103302 70.0   19.84   -3.71   -1.41  103303 !Quesnellia is strung out to original position between 70-50Ma
+103302 200.0   19.84   -3.71   -1.41  103303 !Calculated interactively by GPlates
+103303  0.0   90.0    0.0    0.0  103001 !Quesnellia sub 3
+103303 100.0   90.0    0.0    0.0  103001 !115km dextral translation of F-I-T fault (Gabrielse et al., 2006)
+103303 115.0   57.97 -136.81    2.67  103001 !Gabrielse et al., 2006
+103303 173.0   57.97 -136.81    2.67  103001 !Gabrielse et al., 2006
+103303 200.0   57.97 -136.81    2.67  103001 !QN on margin of North America
+1034  0.0   90.0    0.0    0.0  1030 !Cache Creek West
+1034 50.0   90.0    0.0    0.0  1030 !Present-day position relative to Yukon-Tanana
+1034 68.0   52.9751 -124.771   36.3835  1030 !straights out to present-day orientation
+1034 70.0   53.4961 -128.6738   29.2591  1030 !straights out to present-day orientation
+1034 90.0   55.0716 -126.7743   30.0421  1030 !straights out to present-day orientation
+1034 110.0   56.0844 -120.0922   28.9966  1030 !Cache Creek bent round to fit NAM margin
+1034 140.0   55.332 -111.4596   19.612  1030 !Cache Creek bent round to fit NAM margin
+1034 150.0   53.0692 -113.0527   16.9136  1030 !Cache Creek bent round to fit NAM margin
+1034 170.0   54.7113 -124.4825   14.2574  1030 !Cache Creek bent round to fit NAM margin
+1034 173.0   90.0    0.0    0.0  1030 !Cache Creek West
+1034 200.0   90.0    0.0    0.0  1030 !Cache Creek West
+103401  0.0   90.0    0.0    0.0  1030 !Cache Creek East
+103401 55.0   90.0    0.0    0.0  1030 !Cache Creek East
+103401 90.0   -0.24    4.13  -12.53  1030 !Shear within Cache Creek to accomodate 102.5 Ma paleomag (Enkin, 2006)
+103401 200.0   -0.24    4.13  -12.53  1030 !Shear within Cache Creek to accomodate 102.5 Ma paleomag (Enkin, 2006)
+1035  0.0   90.0    0.0    0.0  1030 !Stikinia
+1035 200.0   90.0    0.0    0.0  1030 !Stikinia
+1036  0.0   90.0    0.0    0.0  1033 !Okanagan
+1036 200.0   90.0    0.0    0.0  1033 !Okanagan
+1037  0.0   90.0    0.0    0.0  1034 !Methow
+1037 200.0   90.0    0.0    0.0  1034 !Methow
+1038  0.0   90.0    0.0    0.0  1034 !Bridge River
+1038 200.0   90.0    0.0    0.0  1034 !Bridge River
+1039  0.0   90.0    0.0    0.0  1034 !Cadwaller
+1039 200.0   90.0    0.0    0.0  1034 !Cadwaller
+1040  0.0   90.0    0.0    0.0  1034 !Hanson
+1040 200.0   90.0    0.0    0.0  1034 !Hanson
+1045  0.0   90.0    0.0    0.0  1034 !Chilliwack
+1045 200.0   90.0    0.0    0.0  1034 !Chilliwack
+1060  0.0   90.0    0.0    0.0  1072 !Coast Plutonic Complex
+1060 160.0   90.0    0.0    0.0  1072 !Postaccretionary arc, 160-45Ma (Nelson et al., 2013)
+1070  0.0   90.0    0.0    0.0  1072 !Windy
+1070 200.0   90.0    0.0    0.0  1072 !Windy
+1071  0.0   90.0    0.0    0.0  1072 !Alexander
+1071 200.0   90.0    0.0    0.0  1072 !Alexander
+1072  0.0   90.0    0.0    0.0  1030 !Wrangellia
+1072 118.0   90.0    0.0    0.0  1030 !Final position relative to 1030
+1072 135.0   64.3179 -145.177  -23.4118  1030 !
+1072 140.0   65.0704 -146.3107  -25.6091  1030 !
+1072 146.6   66.3242 -142.8387  -28.5019  1030 !
+1072 150.0   66.6947 -143.1189  -29.9978  1030 !
+1072 155.0   67.0741 -149.1167  -32.2972  1030 !cross-over to Yukon-Tanana
+1072 155.0   -8.9186   64.86   58.8641  000 !Palaeomag ~10 degree northward drift (Kent & Irving, 2010)
+1072 170.0   -6.2022   60.2019   57.8754  000 !Constrained by seismic tomography slab
+1072 200.0   -6.1   62.6   57.16  000 !Constrained by seismic tomography slab
+1073  0.0   90.0    0.0    0.0  1072 !Peninsular
+1073 80.0   90.0    0.0    0.0  1072 !Avoid collision
+1073 90.0  -57.25   32.27   15.22  1072 !Avoid collision
+1073 95.0  -54.56   32.31   19.98  1072 !Avoid collision
+1073 100.0  -57.75   32.62   34.11  1072 !Avoid collision
+1073 110.0  -55.39   32.66   53.95  1072 !Avoid collision
+1073 200.0  -55.39   32.66   53.95  1072 !Avoid collision
+1074  0.0   90.0    0.0    0.0  1072 !Windy-McKinley
+1074 200.0   90.0    0.0    0.0  1072 !Windy-McKinley
+1077  0.0   90.0    0.0    0.0  1076 !Volcanosedimentary-island arc
+1077 200.0   90.0    0.0    0.0  1076 !Volcanosedimentary-island arc
+101710  0.0   90.0    0.0    0.0  101 !Cretaceous Fransciscan
+101710 10.0   50.9858   44.3586    0.664  101 !Present-day latitude (Tarduno et al., 1985)
+101710 21.0   48.628 -101.7792    6.4189  101 !
+101710 35.0   51.7485  -92.5932   12.0275  101 !Northward translation to present day latitude (Tarduno et al., 1985)
+101710 45.0   51.5591  -75.4575    9.9674  101 !Northward translation to present day latitude (Tarduno et al., 1985)
+101710 50.0   45.9763  -96.0715   24.6903  101 !
+101710 63.0   46.5473  -39.0119   16.2254  101 !First sediments with NAM provenance (Tarduno et al., 1985)
+101710 63.0   32.397 -111.5335  -48.7257  1093 !XXX to NAM
+101710 123.0   32.397 -111.5335  -48.7256  1093 !Accretion to Alisitos
+101720  0.0   90.0    0.0    0.0  101710 !Tertiary Fransciscan
+101720 66.0   90.0    0.0    0.0  101710 !Tertiary Fransciscan
+101730  0.0   90.0    0.0    0.0  101710 !Permanente
+101730 115.0   90.0    0.0    0.0  101710 !Accretion to Alisitos
+101730 115.0   83.8607   60.4909  132.0782  902 !XXX FAR-FRA
+101730 145.0   83.8607   60.4909  132.0782  902 !PAC-FAR LIP
+103310  0.0   90.0    0.0    0.0  1019 !Native Jurassic
+103310 200.0   90.0    0.0    0.0  1019 !Native Jurassic
+103320  0.0   90.0    0.0    0.0  103430 !Native Jurassic West
+103320 200.0   90.0    0.0    0.0  103430 !Native Jurassic West
+103330  0.0   90.0    0.0    0.0  101910 !Native Jurassic West
+103330 200.0   90.0    0.0    0.0  101910 !Native Jurassic West
+103340  0.0   90.0    0.0    0.0  101920 !Native Jurassic West
+103340 200.0   90.0    0.0    0.0  101920 !Native Jurassic West
+1019  0.0   90.0    0.0    0.0  1020 !Golconda
+1019 200.0   90.0    0.0    0.0  1020 !Golconda
+101910  0.0   90.0    0.0    0.0  1019 !Golconda West
+101910 45.0   90.0    0.0    0.0  1019 !Golconda West final position relative to 1019
+101910 85.0  -41.57  112.95  -11.59  1019 !
+101910 200.0  -41.57  112.95  -11.59  1019 !
+101920  0.0   90.0    0.0    0.0  1019 !
+101920 200.0   90.0    0.0    0.0  1019 !
+103410  0.0   90.0    0.0    0.0  103420 !Stuart Fork-Fort Jones
+103410 200.0   90.0    0.0    0.0  103420 !Stuart Fork-Fort Jones
+103411  0.0   90.0    0.0    0.0  103421 !Stuart Fork-Fort Jones West
+103411 200.0   90.0    0.0    0.0  103421 !Stuart Fork-Fort Jones West
+103420  0.0   90.0    0.0    0.0  103421 !Hayfork
+103420 50.0   90.0    0.0    0.0  103421 !Current position relative to Hayfork West
+103420 53.0   38.422 -121.9026    0.0777  103421 !movement inland to present-day position
+103420 56.0   52.8367  -95.7115   -3.8045  103421 !Avoid collision
+103420 65.0   52.8367  -95.7115   -3.8045  103421 !Avoid collision
+103420 86.0   43.2944 -108.9653  -13.0536  103421 !Avoid collision
+103420 110.0   42.9769 -113.7646  -16.5513  103421 !Avoid collision
+103420 142.0   47.2161   30.4257   -0.8091  103421 !Movement with Insular
+103420 170.0   47.2161   30.4257   -0.8091  103421 !Position above Mezcalera slab
+103420 200.0   90.0    0.0    0.0  103421 !Hayfork
+103421  0.0   90.0    0.0    0.0  1020 !Hayfork West
+103421 53.0   90.0    0.0    0.0  1020 !Current position wrt SNB
+103421 53.0   51.3002 -167.5175   10.0882  1072 !movement inland to present-day position
+103421 56.0   46.4981 -139.3879   28.9425  1072 !translation up margin
+103421 59.0   45.8738 -130.6252   55.2006  1072 !translation up margin
+103421 63.0   46.8037 -133.1834   55.4818  1072 !translation up margin
+103421 90.0   45.4934 -136.7928   56.1486  1072 !translation up margin
+103421 100.0   46.945 -133.0989   55.8026  1072 !Translation along INS to avoid GUS
+103421 114.0   46.9757 -131.6755   55.2228  1072 !Translation along INS to avoid GUS
+103421 118.0   46.1406 -136.517   33.5982  1072 !XXX to Wrangellia
+103421 118.0   50.2808  -80.9251   39.8223  1080 !Above Mezcalera slab
+103421 170.0   50.2943  -80.9315   39.8223  1080 !Above Mezcalera slab
+103421 200.0   90.0    0.0    0.0  1080 !Hayfork West
+103430  0.0   90.0    0.0    0.0  103401 !Baker
+103430 35.0   44.7141 -119.106    0.6542  103401 !16 degrees rotation 45-35Ma (Housen & Dorsey, 2005)
+103430 45.0   44.2217 -119.157   24.1768  103401 !16 degrees rotation 45-35Ma (Housen & Dorsey, 2005)
+103430 50.0   45.0032 -119.2769   32.1037  103401 !Reaches present-day latitude
+103430 54.0   47.5461 -127.6083   37.8992  103401 !Northward motion
+103430 57.0   47.4039 -127.2143   42.0576  103401 !Northward motion
+103430 70.0   48.1565 -127.1288   60.169  103401 !Northward motion
+103430 93.0  -47.8724   53.7716  -60.9814  103401 !36 degrees rotation since 93Ma (Housen & Dorsey, 2005)
+103430 105.0  -48.411   53.5111  -60.992  103401 !Associated with Quesnellia
+103430 200.0  -48.411   53.5111  -60.992  103401 !Associated with Quesnellia
+1020  0.0   90.0    0.0    0.0  101 !Sierra Nevada Batholith -Eocene Extension
+1020 36.0   -5.0068   61.588    4.013  101 !Pre-extension position (Wyld et al., 2006; McQuarie and Wernicke, 2006)
+1020 200.0   -5.0068   61.588    4.013  101 !avoid collision with Mexican continental margin
+1021  0.0   90.0    0.0    0.0  1019 !back arc basin
+1021 200.0   90.0    0.0    0.0  1019 !back arc basin
+1022  0.0   90.0    0.0    0.0  10191 !Great valley
+1022 50.0   90.0    0.0    0.0  10191 !Great valley
+1022 50.0   28.1274  171.3462   19.4734  1072 !Great valley
+1022 87.0   45.1376 -137.6687   56.5691  1072 !
+1022 93.0   45.205 -137.2333   53.7052  1072 !
+1022 97.0   44.1274 -143.0991   40.4702  1072 !
+1022 113.0   41.9422 -148.917   31.0724  1072 !
+1022 140.0   44.1393 -143.0439   38.2238  1072 !
+1022 142.99   47.8891 -136.0043   45.6188  1072 !
+1022 143.0   12.5232 -167.6155   12.1249  1072 !
+1022 143.0   54.35  -68.9077   31.8152  1080 !
+1022 170.0   54.35  -68.9077   31.8152  1080 !
+1022 170.0   47.8584 -138.6811   47.2141  1072 !
+1022 200.0   28.1274  171.3462   19.4734  1072 !Great valley
+102210  0.0   90.0    0.0    0.0  1019 !Great valley West
+102210 200.0   90.0    0.0    0.0  1019 !Great valley West
+1023  0.0   90.0    0.0    0.0  101 !Salinian
+1023  4.0   40.2326    6.7035    2.1595  101 !Basin and Range Extension (McQuarrie & Wernicke, 2005)
+1023  7.0   38.4056    4.1088    2.7317  101 !Basin and Range Extension (McQuarrie & Wernicke, 2005)
+1023 15.0   39.3967    5.3698    3.3164  101 !Basin and Range Extension (McQuarrie & Wernicke, 2005)
+1023 18.0   42.7678   10.7031    3.6498  101 !Basin and Range Extension (McQuarrie & Wernicke, 2005)
+1023 35.0   44.3889   13.7208    4.754  101 !Start of Basin and Range Extension
+1023 70.0   48.7391 -106.4505   19.8611  101 !Position next to SNB
+1023 170.0   48.7391 -106.4505   19.8611  101 !Position next to SNB
+1023 200.0   44.3889   13.7208    4.754  101 !Salinan outboard of Mexican continental margin
+1024  0.0   90.0    0.0    0.0  1023 !Transverse Ranges
+1024  4.0   33.5097 -116.9257   28.4398  1023 !San Andreas interactions (McQuarrie & Wernicke, 2005)
+1024  7.0   33.8895 -117.6831   49.7734  1023 !San Andreas interactions (McQuarrie & Wernicke, 2005)
+1024 15.0  -33.834   62.6154 -106.7262  1023 !San Andreas interactions (McQuarrie & Wernicke, 2005)
+1024 16.0  -33.8803   62.6452 -106.8795  1023 !100 degree rotation since Early Miocene (Hornafius et al., 1986)
+1024 35.0  -33.5996   61.62 -110.088  1023 !San Andreas interactions (McQuarrie & Wernicke, 2005)
+1024 48.0  -34.0869   59.2593 -113.1897  1023 !Movement to position outboard of Mexico
+1024 70.0  -34.7139   58.265 -118.4682  1023 !Position next to Salinian Block
+1024 170.0  -34.7139   58.265 -118.4682  1023 !Position next to Salinian Block
+1024 200.0  -33.5996   61.62 -110.088  1023 !Rotation of Transverse Range at 20Ma (Atwater 1998)
+102410  0.0   90.0    0.0    0.0  1024 !Transverse Ranges
+102410 20.0  -29.65   60.9  -13.08  1024 !Rotation of Transverse Range at 20Ma (Atwater, 1998)
+102410 200.0  -29.65   60.9  -13.08  1024 !Rotation of Transverse Range at 20Ma (Atwater, 1998)
+1025  0.0   90.0    0.0    0.0  101 !Idaho Batholith
+1025 200.0   90.0    0.0    0.0  101 !Stationary relative to 101
+1075  0.0   90.0    0.0    0.0  105 !Peninsular Range Batholith
+1075 150.0   90.0    0.0    0.0  105 !Location constrained by Baja California in coastlines polygon (Seton et al., 2006)
+1076  0.0   90.0    0.0    0.0  103430 !Wallowa
+1076 200.0   90.0    0.0    0.0  103430 !Wallowa
+1001  0.0   90.0    0.0    0.0  95104 !Caborca
+1001 200.0   90.0    0.0    0.0  95104 !Caborca
+1080  0.0   90.0    0.0    0.0  1001 !Guerrero
+1080 80.0   90.0    0.0    0.0  1001 !Final position relative to 1001
+1080 108.0   66.7022 -118.3863  -10.6866  1001 !Accretion to Mexico
+1080 108.0   11.9843   86.044   38.346  000 !Constrained by seismic tomography slab
+1080 200.0   11.9843   86.044   38.346  000 !Constrained by seismic tomography slab
+1081  0.0   90.0    0.0    0.0  1080 !Xolapa
+1081 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1082  0.0   90.0    0.0    0.0  1080 !Toliman/Mixtapa
+1082 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1083  0.0   90.0    0.0    0.0  1080 !Sierra Madre
+1083 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1084  0.0   90.0    0.0    0.0  1080 !Parral/Sombrerete
+1084 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1085  0.0   90.0    0.0    0.0  1080 !Juarez
+1085 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1086  0.0   90.0    0.0    0.0  1001 !Cortez
+1086 200.0   90.0    0.0    0.0  1001 !Stationary relative to Guerrero
+1087  0.0   90.0    0.0    0.0  1080 !Oaxaca
+1087 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1088  0.0   90.0    0.0    0.0  1080 !Papanoa
+1088 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1089  0.0   90.0    0.0    0.0  1080 !Santa Ana
+1089 50.0   37.63  -82.29   18.93  1080 !Avoid collision
+1089 84.0   37.6293  -85.9819   40.7182  1080 !
+1089 89.0   31.6074  -89.5186   42.2448  1080 !
+1089 90.0  -33.63   87.43  -65.42  1080 !XXX 000 to 1080
+1089 90.0  -57.58  147.53  -35.81  000 !Constrained by seismic tomography slab
+1089 200.0  -57.58  147.53  -35.81  000 !Constrained by seismic tomography slab
+1090  0.0   90.0    0.0    0.0  1089 !Magdelena
+1090 200.0   90.0    0.0    0.0  1089 !Stationary relative to Santa Ana
+1091  0.0   90.0    0.0    0.0  1089 !La Paz
+1091 200.0   90.0    0.0    0.0  1089 !Stationary relative to Santa Ana
+1092  0.0   90.0    0.0    0.0  1080 !Artega
+1092 200.0   90.0    0.0    0.0  1080 !Stationary relative to Guerrero
+1093  0.0   33.3326 -100.4914   63.0943  105 !Alisitos
+1093 35.0   33.3326 -100.4914   63.0943  105 !XXX to Baja California
+1093 35.0   35.729  -97.8604   71.3432  1080 !Position outboard of Guerrero
+1093 63.0   35.729  -97.8604   71.3432  1080 !Position outboard of Guerrero
+1093 90.0   34.1715  -92.9695   77.7663  1080 !Accretion complete (Johnson et al., 1999)
+1093 102.0   34.1715  -92.9695   77.7663  1080 !Accretion complete (Johnson et al., 1999)
+1093 111.0   29.7334 -105.5742  137.2912  1080 !Motion on Farallon following shutdown 
+1093 115.0   28.1799 -106.4757  138.8905  1080 !Northwestward motion corresponding to slab geometry
+1093 147.0   26.8276 -108.2821  146.795  1080 !Initation of Alisitos arc above slab
+1093 148.0   27.3974 -108.5733  144.9948  1080 !Alisitos
+1094  0.0   90.0    0.0    0.0  201 !Pinon terrane
+1094 66.0   90.0    0.0    0.0  201 !Accretion to SAM
+1094 66.0   64.0214  132.3012   63.7905  902 !movement on Farallon plate
+1094 70.0   69.0661  -53.4041   62.1869  902 !
+1094 86.0   69.0685  -53.3855   62.194  902 !XXX to Farallon
+1094 86.0    8.6846  -73.2646   97.501  9052 !Shutdown of Southern Farallon arcs
+1094 123.0    8.6846  -73.2646   97.501  9052 !Position on Proto-Caribbean plate
+9952  0.0   90.0    0.0    0.0  000 !
+9952 106.0   84.929   70.0358    6.3652  000 !
+9952 120.0   23.0108    4.1043   -0.0872  000 !
+9952 170.0   23.0108    4.1043   -0.0872  000 !
