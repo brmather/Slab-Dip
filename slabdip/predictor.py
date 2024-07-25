@@ -113,7 +113,14 @@ class SlabDipper(object):
     def model(self, value):
         self.add_plate_reconstruction(value)
         
-    def sample_age_grid(self, lons, lats, time):
+    def sample_age_grid(
+            self,
+            lons, 
+            lats, 
+            time, 
+            from_rotation_reference_plate=None,
+            to_rotation_reference_plate=None
+        ):
         # age_grid = self.downloader.get_age_grid(reconstruction_time)
         if self.agegrid_filename:
             age_raster = gplately.Raster(data=self.agegrid_filename.format(time))
@@ -125,10 +132,32 @@ class SlabDipper(object):
                 Set agegrid_filename or provide a supported reconstruction model")
 
         age_raster.fill_NaNs(inplace=True) # fill in NaN values
+
+        # rotate grids if needed
+        if from_rotation_reference_plate is not None and to_rotation_reference_plate is not None:
+            spacingX = np.diff(age_raster.lons).mean()
+            spacingY = np.diff(age_raster.lats).mean()
+            mean_spacing = 0.5*(spacingX + spacingY)
+            age_raster = age_raster.rotate_reference_frames(
+                mean_spacing,
+                time,
+                from_rotation_features_or_model=self._model.rotation_model,
+                to_rotation_features_or_model=self._model.rotation_model,
+                from_rotation_reference_plate=from_rotation_reference_plate,
+                to_rotation_reference_plate=to_rotation_reference_plate,
+            )
+
         age_interp = age_raster.interpolate(lons, lats) # interpolate to trenches
         return age_interp
     
-    def sample_spreading_rate_grid(self, lons, lats, time):
+    def sample_spreading_rate_grid(
+            self,
+            lons, 
+            lats, 
+            time, 
+            from_rotation_reference_plate=None,
+            to_rotation_reference_plate=None
+        ):
         # spreadrate_grid = self.downloader.get_spreading_rate_grid(reconstruction_time)
         if self.spreadrate_filename:
             spreadrate_raster = gplately.Raster(data=self.spreadrate_filename.format(time))
@@ -140,6 +169,21 @@ class SlabDipper(object):
                 Set spreadrate_filename or provide a supported reconstruction model")
 
         spreadrate_raster.fill_NaNs(inplace=True)
+
+        # rotate grids if needed
+        if from_rotation_reference_plate is not None and to_rotation_reference_plate is not None:
+            spacingX = np.diff(spreadrate_raster.lons).mean()
+            spacingY = np.diff(spreadrate_raster.lats).mean()
+            mean_spacing = 0.5*(spacingX + spacingY)
+            spreadrate_raster = spreadrate_raster.rotate_reference_frames(
+                mean_spacing,
+                time,
+                from_rotation_features_or_model=self._model.rotation_model,
+                to_rotation_features_or_model=self._model.rotation_model,
+                from_rotation_reference_plate=from_rotation_reference_plate,
+                to_rotation_reference_plate=to_rotation_reference_plate,
+            )
+
         spreadrate_interp = spreadrate_raster.interpolate(lons, lats)
         return spreadrate_interp*1e-3
     
@@ -248,22 +292,28 @@ class SlabDipper(object):
         else:
             return subduction_radius
     
-    def tessellate_slab_dip(self, time, tessellation_threshold_radians=DEFAULT_TESSELLATION):
+    def tessellate_slab_dip(
+            self,
+            time,
+            tessellation_threshold_radians=DEFAULT_TESSELLATION,
+            from_rotation_reference_plate=None,
+            to_rotation_reference_plate=None
+        ):
         time = int(time)
-        self.tessellation_threshold_radians = DEFAULT_TESSELLATION
-        
+        self.tessellation_threshold_radians = tessellation_threshold_radians
+
         if self._model is None:
             raise ValueError("Don't forget to set a GPlately plate model! `self.model = model`")
-        
+
+        # update plate ID
+        if to_rotation_reference_plate is not None:
+            self._model.anchor_plate_id = to_rotation_reference_plate
+
         subduction_data = self._model.tessellate_subduction_zones(
                                                            time,
                                                            tessellation_threshold_radians,
                                                            ignore_warnings=True,
                                                            output_subducting_absolute_velocity_components=True)
-
-        # mask "negative" subduction rates
-        subduction_convergence = np.fabs(subduction_data[:,2])*1e-2 * np.cos(np.deg2rad(subduction_data[:,3]))
-        subduction_data = subduction_data[subduction_convergence >= 0]
 
         subduction_lon         = subduction_data[:,0]
         subduction_lat         = subduction_data[:,1]
@@ -277,12 +327,26 @@ class SlabDipper(object):
         subduction_migration   = np.fabs(subduction_data[:,4])*1e-2 * np.cos(np.deg2rad(subduction_data[:,5]))
         subduction_plate_vel   = subduction_data[:,10]*1e-2
 
+        subduction_convergence = np.clip(subduction_convergence, 0, 1e99)
+
         # sample AgeGrid
-        age_interp = self.sample_age_grid(subduction_lon, subduction_lat, time)
+        age_interp = self.sample_age_grid(
+            subduction_lon,
+            subduction_lat,
+            time,
+            from_rotation_reference_plate=from_rotation_reference_plate,
+            to_rotation_reference_plate=to_rotation_reference_plate)
+
+        # calculate the thickness of the downgoing plate
         thickness = gplately.tools.plate_isotherm_depth(age_interp)
 
         # sample spreadrate grid
-        spreadrate_interp = self.sample_spreading_rate_grid(subduction_lon, subduction_lat, time)
+        spreadrate_interp = self.sample_spreading_rate_grid(
+            subduction_lon,
+            subduction_lat,
+            time,
+            from_rotation_reference_plate=from_rotation_reference_plate,
+            to_rotation_reference_plate=to_rotation_reference_plate)
 
         # get the ratio of convergence velocity to trench migration
         vratio = (subduction_convergence + subduction_migration)/(subduction_convergence + 1e-22)
