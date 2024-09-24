@@ -45,7 +45,7 @@ You can install the latest stable public release of `slabdip` and all of its dep
 This is the preferred method to install `slabdip` which downloads binaries from the conda-forge channel.
 
 ```sh
-conda install -c conda-forge gplately
+conda install -c conda-forge slabdip
 ```
 
 #### Creating a new conda environment
