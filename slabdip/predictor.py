@@ -329,10 +329,14 @@ class SlabDipper(object):
 
         subduction_convergence = np.clip(subduction_convergence, 0, 1e99)
 
+        # project points away from the trench (edge of plate boundary)
+        subduction_lon_buffer = subduction_lon - np.sin(np.deg2rad(subduction_norm))
+        subduction_lat_buffer = subduction_lat - np.cos(np.deg2rad(subduction_norm))
+
         # sample AgeGrid
         age_interp = self.sample_age_grid(
-            subduction_lon,
-            subduction_lat,
+            subduction_lon_buffer,
+            subduction_lat_buffer,
             time,
             from_rotation_reference_plate=from_rotation_reference_plate,
             to_rotation_reference_plate=to_rotation_reference_plate)
@@ -342,8 +346,8 @@ class SlabDipper(object):
 
         # sample spreadrate grid
         spreadrate_interp = self.sample_spreading_rate_grid(
-            subduction_lon,
-            subduction_lat,
+            subduction_lon_buffer,
+            subduction_lat_buffer,
             time,
             from_rotation_reference_plate=from_rotation_reference_plate,
             to_rotation_reference_plate=to_rotation_reference_plate)
