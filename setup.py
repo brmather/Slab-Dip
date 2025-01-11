@@ -9,7 +9,7 @@ with io.open(path.join(this_directory, 'README.md'), encoding='utf-8') as f:
 if __name__ == "__main__":
     setup(
         name='slabdip',
-        version='4.2.1',
+        version='4.2.2',
         description='Method to calculate slab dip using simple plate kinematic parameters',
         long_description=long_description,
         long_description_content_type='text/markdown',
@@ -38,6 +38,7 @@ if __name__ == "__main__":
                            'Programming Language :: Python :: 3.8',
                            'Programming Language :: Python :: 3.9',
                            'Programming Language :: Python :: 3.10',
-                           'Programming Language :: Python :: 3.11'
+                           'Programming Language :: Python :: 3.11',
+                           'Programming Language :: Python :: 3.12',
                            ]
         )
